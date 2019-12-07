@@ -99,7 +99,6 @@ async function buildCommand(username, program)
     twitter: program.twitter,
     linkedin: program.linkedin,
     medium: program.medium,
-    dribbble: program.dribbble
     dribbble: program.dribbble,
     telegram: program.telegram,
     email: program.email
