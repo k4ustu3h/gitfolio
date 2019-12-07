@@ -1,16 +1,33 @@
 #! /usr/bin/env node
+
 /* Argument parser */
 const program = require("commander");
 
 process.env.OUT_DIR = process.env.OUT_DIR || process.cwd();
 
-const { buildCommand } = require("../build");
-const { updateCommand } = require("../update");
-const { uiCommand } = require("../ui");
-const { runCommand } = require("../run");
-const { version } = require("../package.json");
+const
+{
+  buildCommand
+} = require("../build");
+const
+{
+  updateCommand
+} = require("../update");
+const
+{
+  uiCommand
+} = require("../ui");
+const
+{
+  runCommand
+} = require("../run");
+const
+{
+  version
+} = require("../package.json");
 
-function collect(val, memo) {
+function collect(val, memo)
+{
   memo.push(val);
   return memo;
 }
@@ -29,6 +46,8 @@ program
   .option("-l, --linkedin [username]", "specify linkedin username")
   .option("-m, --medium [username]", "specify medium username")
   .option("-d, --dribbble [username]", "specify dribbble username")
+  .option("-T, --telegram [username]", "specify telegram username")
+  .option("-e, --email [username]", "specify email")
   .action(buildCommand);
 
 program
@@ -47,7 +66,8 @@ program
   .option("-p, --port [port]", "provide a port for localhost, default is 3000")
   .action(runCommand);
 
-program.on("command:*", () => {
+program.on("command:*", () =>
+{
   console.log("Unknown Command: " + program.args.join(" "));
   program.help();
 });

@@ -1,19 +1,31 @@
 const fs = require("fs");
 const express = require("express");
-const { updateHTML } = require("./populate");
-const { populateCSS, populateConfig } = require("./build");
-const { updateCommand } = require("./update");
+const
+{
+  updateHTML
+} = require("./populate");
+const
+{
+  populateCSS,
+  populateConfig
+} = require("./build");
+const
+{
+  updateCommand
+} = require("./update");
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/views"));
 app.set("views", __dirname + "/views");
 app.use(
-  express.json({
+  express.json(
+  {
     limit: "50mb"
   })
 );
 app.use(
-  express.urlencoded({
+  express.urlencoded(
+  {
     limit: "50mb",
     extended: true
   })
@@ -26,23 +38,32 @@ const jsdom = require("jsdom").JSDOM,
     resources: "usable"
   };
 global.DOMParser = new jsdom().window.DOMParser;
-const { getBlog, outDir } = require("./utils");
+const
+{
+  getBlog,
+  outDir
+} = require("./utils");
 
-function createBlog(title, subtitle, folder, topImage, images, content) {
+function createBlog(title, subtitle, folder, topImage, images, content)
+{
   // Checks to make sure this directory actually exists
   // and creates it if it doesn't
-  if (!fs.existsSync(`${outDir}/blog/`)) {
+  if (!fs.existsSync(`${outDir}/blog/`))
+  {
     fs.mkdirSync(
       `${outDir}/blog/`,
       {
         recursive: true
       },
-      err => {}
+      err =>
+      {}
     );
   }
 
-  if (!fs.existsSync(`${outDir}/blog/${folder}`)) {
-    fs.mkdirSync(`${outDir}/blog/${folder}`, {
+  if (!fs.existsSync(`${outDir}/blog/${folder}`))
+  {
+    fs.mkdirSync(`${outDir}/blog/${folder}`,
+    {
       recursive: true
     });
   }
@@ -50,11 +71,13 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
   fs.copyFile(
     `${__dirname}/assets/blog/blogTemplate.html`,
     `${outDir}/blog/${folder}/index.html`,
-    err => {
+    err =>
+    {
       if (err) throw err;
       jsdom
         .fromFile(`${outDir}/blog/${folder}/index.html`, options)
-        .then(function(dom) {
+        .then(function(dom)
+        {
           let window = dom.window,
             document = window.document;
           let style = document.createElement("link");
@@ -71,7 +94,8 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
             topImage.split("/")[1].split(";")[0]
           }') center center`;
 
-          if (content != null) {
+          if (content != null)
+          {
             var parser = new DOMParser();
             content = parser.parseFromString(content, "text/html");
             document.getElementById("blog").innerHTML =
@@ -79,7 +103,8 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
           }
 
           images = JSON.parse(images);
-          images.forEach((item, index) => {
+          images.forEach((item, index) =>
+          {
             var base64Image = item.split(";base64,").pop();
             fs.writeFile(
               `${outDir}/blog/${folder}/img_${index}.${
@@ -89,7 +114,8 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
               {
                 encoding: "base64"
               },
-              function(err) {
+              function(err)
+              {
                 if (err) throw err;
               }
             );
@@ -98,7 +124,8 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
           fs.writeFile(
             `${outDir}/blog/${folder}/index.html`,
             "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
-            async function(error) {
+            async function(error)
+            {
               if (error) throw error;
 
               var base64ImageTop = topImage.split(";base64,").pop();
@@ -110,7 +137,8 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
                 {
                   encoding: "base64"
                 },
-                function(err) {
+                function(err)
+                {
                   if (err) throw err;
                 }
               );
@@ -127,7 +155,8 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
               fs.writeFile(
                 `${outDir}/blog.json`,
                 JSON.stringify(old_blogs, null, " "),
-                function(err) {
+                function(err)
+                {
                   if (err) throw err;
                   console.log(
                     `Blog created successfully at ${outDir}\\blog\\${folder}\n`
@@ -137,20 +166,25 @@ function createBlog(title, subtitle, folder, topImage, images, content) {
             }
           );
         })
-        .catch(function(error) {
+        .catch(function(error)
+        {
           console.log(error);
         });
     }
   );
 }
 
-function uiCommand() {
-  app.get("/", function(req, res) {
+function uiCommand()
+{
+  app.get("/", function(req, res)
+  {
     res.render("index.ejs");
   });
 
-  app.get("/update", function(req, res) {
-    if (!fs.existsSync(`${outDir}/config.json`)) {
+  app.get("/update", function(req, res)
+  {
+    if (!fs.existsSync(`${outDir}/config.json`))
+    {
       return res.send(
         'You need to run build command before using update<br><a href="/">Go Back</a>'
       );
@@ -159,9 +193,11 @@ function uiCommand() {
     res.redirect("/");
   });
 
-  app.post("/build", function(req, res) {
+  app.post("/build", function(req, res)
+  {
     let username = req.body.username;
-    if (!username) {
+    if (!username)
+    {
       return res.send("username can't be empty");
     }
     let sort = req.body.sort ? req.body.sort : "created";
@@ -172,9 +208,11 @@ function uiCommand() {
     let linkedin = req.body.linkedin ? req.body.linkedin : null;
     let medium = req.body.medium ? req.body.medium : null;
     let dribbble = req.body.dribbble ? req.body.dribbble : null;
-    let background = req.body.background
-      ? req.body.background
-      : "https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80";
+    let telegram = req.body.telegram ? req.body.telegram : null;
+    let email = req.body.email ? req.body.email : null;
+    let background = req.body.background ?
+      req.body.background :
+      "https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80";
     let theme = req.body.theme == "on" ? "dark" : "light";
     const opts = {
       sort: sort,
@@ -184,11 +222,14 @@ function uiCommand() {
       twitter: twitter,
       linkedin: linkedin,
       medium: medium,
-      dribbble: dribbble
+      dribbble: dribbble,
+      telegram: telegram,
+      email: email
     };
 
     updateHTML(username, opts);
-    populateCSS({
+    populateCSS(
+    {
       background: background,
       theme: theme
     });
@@ -196,30 +237,38 @@ function uiCommand() {
     res.redirect("/");
   });
 
-  app.get("/blog", function(req, res) {
-    if (!fs.existsSync(`${outDir}/config.json`)) {
+  app.get("/blog", function(req, res)
+  {
+    if (!fs.existsSync(`${outDir}/config.json`))
+    {
       return res.send(
         'You need to run build command before accessing blogs<br><a href="/">Go Back</a>'
       );
     }
-    fs.readFile(`${outDir}/config.json`, function(err, data) {
-      res.render("blog.ejs", {
+    fs.readFile(`${outDir}/config.json`, function(err, data)
+    {
+      res.render("blog.ejs",
+      {
         profile: JSON.parse(data)
       });
     });
   });
 
-  app.post("/createBlog", function(req, res) {
+  app.post("/createBlog", function(req, res)
+  {
     let title = req.body.title;
     let subtitle = req.body.subtitle;
     let content = req.body.content ? req.body.content : null;
-    if (!title) {
+    if (!title)
+    {
       return res.send("title can't be empty");
     }
-    if (!subtitle) {
+    if (!subtitle)
+    {
       return res.send("subtitle can't be empty");
     }
-    if (!content) {
+    if (!content)
+    {
       return res.send("something isn't working fine, try again :p");
     }
     let folder = title.replace(/[^a-zA-Z ]/g, "").replace(/ /g, "-");

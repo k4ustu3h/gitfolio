@@ -1,6 +1,7 @@
 <img src="https://i.imgur.com/eA6clZr.png">
 
-# Gitfolio 
+# Gitfolio
+
 [![Tweet](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=personal%20website%20and%20a%20blog%20for%20every%20github%20user%20@imfunnieee%20&url=https://github.com/imfunniee/gitfolio) ![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=popout-square) ![npm](https://img.shields.io/npm/dm/gitfolio.svg?style=popout-square) ![GitHub top language](https://img.shields.io/github/languages/top/imfunniee/gitfolio.svg?style=popout-square) ![GitHub last commit](https://img.shields.io/github/last-commit/imfunniee/gitfolio.svg?style=popout-square) ![GitHub](https://img.shields.io/github/license/imfunniee/gitfolio.svg?style=popout-square) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ### personal website + blog for every github user
@@ -75,8 +76,8 @@ $ gitfolio build <username> --sort star --order desc
 
 Themes are specified using the `--theme [theme-name]` flag when running the `build` command. The available themes are
 
-- `light`
-- `dark`
+-   `light`
+-   `dark`
 
 > TODO: Add more themes
 
@@ -98,10 +99,10 @@ You could also add in your custom CSS inside `index.css` to give it a more perso
 
 #### Add Social Media links on your profile
 
-Twitter, LinkedIn, Medium & Dribbble links to your profile while building
+Twitter, LinkedIn, Medium, Dribbble, Telegram & email links to your profile while building
 
 ```sh
-gitfolio build <username> --twitter <twitter_username> --linkedin <linkedin_username> --medium <medium_username> --dribbble <dribbble_username>
+gitfolio build <username> --twitter <twitter_username> --linkedin <linkedin_username> --medium <medium_username> --dribbble <dribbble_username> --telegram <telegram_username> --email <email_address>
 ```
 
 ### Let's Publish
@@ -144,15 +145,13 @@ Blog Demo? [here](https://imfunniee.github.io/gitfolio/blog/my-first-post/)
 
 Blog's default JSON Format
 
-```
-{
-  "url_title": "my-first-blog", // the title you provide while creating a new blog, this appears in url
-  "title": "Lorem ipsum dolor sit amet", // main title of blog
-  "sub_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", // sub-title of blog
-  "top_image": "https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1450", // main image of blog
-  "visible": true // don't worry about this
-}
-```
+    {
+      "url_title": "my-first-blog", // the title you provide while creating a new blog, this appears in url
+      "title": "Lorem ipsum dolor sit amet", // main title of blog
+      "sub_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", // sub-title of blog
+      "top_image": "https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1450", // main image of blog
+      "visible": true // don't worry about this
+    }
 
 ### Follow me on twitter for more updates [@imfunnieee](https://twitter.com/imfunnieee)
 
