@@ -20,5 +20,4 @@ before_script:
   - npm install -g
   
 script:
-  - gitfolio k4ustu3h &
-  - npm test
+  - gitfolio k4ustu3h
