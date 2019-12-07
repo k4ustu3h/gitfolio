@@ -1,18 +1,24 @@
 language: node_js
+
 node_js:
   - 7
+  
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
+  
 on:
   branch: master
+  
 cache:
    directories:
      - node_modules
+     
 before_script:
   - npm install
+  
 script:
   - gitfolio k4ustu3h &
   - npm test
