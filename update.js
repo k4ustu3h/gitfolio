@@ -23,8 +23,11 @@ async function updateCommand()
     order: data[0].order,
     includeFork: data[0].includeFork,
     types: data[0].types,
+    codepen: data[0].codepen,
+    dev: data[0].dev,
     dribbble: data[0].dribbble,
     email: data[0].email,
+    instagram: data[0].instagram,
     twitter: data[0].twitter
   };
   updateHTML(username, opts);

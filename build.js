@@ -96,8 +96,11 @@ async function buildCommand(username, program)
     order: program.order,
     includeFork: program.fork ? true : false,
     types,
+    codepen: program.codepen,
+    dev: program.dev,
     dribbble: program.dribbble,
     email: program.email,
+    instagram: program.instagram,
     twitter: program.twitter
   };
 

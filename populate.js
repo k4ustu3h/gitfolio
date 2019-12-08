@@ -50,8 +50,11 @@ module.exports.updateHTML = (username, opts) =>
   const
   {
     includeFork,
+    codepen,
+    dev,
     dribbble,
     email,
+    instagram,
     twitter
   } = opts;
   //add data to assets/index.html
@@ -164,11 +167,20 @@ module.exports.updateHTML = (username, opts) =>
                 };"><i class="mdi mdi-account-tie"></i> &nbsp;&nbsp; Available for hire</span>
                 <div class="socials">
                 <span style="display:${
+                  codepen == null ? "none !important" : "block"
+                };"><a href="https://codepen.io/${codepen}" target="_blank" class="socials"><i class="mdi mdi-codepen"></i></a></span>
+                <span style="display:${
+                  dev == null ? "none !important" : "block"
+                };"><a href="https://dev.to/${dev}" target="_blank" class="socials"><i class="mdi mdi-dev-to"></i></a></span>
+                <span style="display:${
                   dribbble == null ? "none !important" : "block"
                 };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><i class="mdi mdi-dribbble"></i></a></span>
                 <span style="display:${
                 email == null ? "none !important" : "block"
                 };"><a href="mailto:${email}" target="_blank" class="socials"><i class="mdi mdi-email"></i></a></span>
+                <span style="display:${
+                  instagram == null ? "none !important" : "block"
+                };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials"><i class="mdi mdi-instagram"></i></a></span>
                 <span style="display:${
                   twitter == null ? "none !important" : "block"
                 };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><i class="mdi mdi-twitter"></i></a></span>

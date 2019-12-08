@@ -69,8 +69,11 @@ function uiCommand()
     let order = req.body.order ? req.body.order : "asc";
     let includeFork = req.body.fork == "true" ? true : false;
     let types = ["owner"];
+    let codepen = req.body.codepen ? req.body.codepen : null;
+    let dev = req.body.dev ? req.body.dev : null;
     let dribbble = req.body.dribbble ? req.body.dribbble : null;
     let email = req.body.email ? req.body.email : null;
+    let instagram = req.body.instagram ? req.body.instagram : null;
     let twitter = req.body.twitter ? req.body.twitter : null;
     let background = req.body.background ?
       req.body.background :
@@ -81,8 +84,11 @@ function uiCommand()
       order: order,
       includeFork: includeFork,
       types,
+      codepen: codepen,
+      dev: dev,
       dribbble: dribbble,
       email: email,
+      instagram: instagram,
       twitter: twitter
     };
 
