@@ -28,7 +28,6 @@
     <div id="about">
                 <span style="display:none;"><i class="fas fa-users"></i> &nbsp; null</span>
                 <span style="display:none;"><i class="fas fa-envelope"></i> &nbsp; null</span>
-                <span style="display:block;"><i class="fas fa-link"></i> &nbsp; <a href="https://k4ustu3h.cf/">https://k4ustu3h.cf/</a></span>
                 <span style="display:block;"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; Jabalpur, Madhya Pradesh, India</span>
                 <span style="display:none;"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
                 <div class="socials">
@@ -102,45 +101,10 @@
                         </section>
                         </a></div>
     </div>
-    <div id="blog_section">
-      <h1>Blog.</h1>
-      <div id="blogs"></div>
-    </div>
     <div id="footer">
       <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
     </div>
   </div>
-  <script type="text/javascript">
-    $.getJSON("blog.json", function(blog)
-    {
-      blog = blog || [];
-      if (blog.length == 0)
-      {
-        return (document.getElementById("blog_section").style.display =
-          "none");
-      }
-      for (var i = 0; i < blog.length; i++)
-      {
-        $("#blogs").append(`
-            <a href="./blog/${blog[i].url_title}/" target="_blank">
-                <section>
-                    <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
-                    <div class="blog_container">
-                        <div class="section_title">${blog[i].title}</div>
-                        <div class="about_section">
-                            ${blog[i].sub_title}
-                        </div>
-                    </div>
-                </section>
-            </a>
-            `);
-      }
-    }).fail(function()
-    {
-      return (document.getElementById("blog_section").style.display = "none");
-    });
-  </script>
-
   <script>
     const magicProjectsGrid = new MagicGrid(
     {
