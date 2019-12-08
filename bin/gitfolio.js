@@ -56,11 +56,6 @@ program
   .action(updateCommand);
 
 program
-  .command("ui")
-  .description("Create and Manage blogs with ease")
-  .action(uiCommand);
-
-program
   .command("run")
   .description("Run build files")
   .option("-p, --port [port]", "provide a port for localhost, default is 3000")
