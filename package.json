@@ -35,14 +35,14 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
-    "commander": "^2.20.3",
-    "ejs": "^2.7.4",
+    "commander": "4.0.1",
+    "ejs": "3.0.1",
     "express": "^4.17.1",
     "github-emoji": "^1.1.1",
-    "got": "^9.6.0",
+    "got": "10.0.2",
     "handlebars": "^4.5.3",
     "jsdom": "^15.2.1",
-    "ncp": "^2.0.0",
-    "prettier": "^1.19.1"
-  }
+    "ncp": "^2.0.0"
+  },
+  "devDependencies": {}
 }
