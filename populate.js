@@ -103,13 +103,13 @@ module.exports.updateHTML = (username, opts) =>
                                   repos[i].language == null
                                     ? "none"
                                     : "inline-block"
-                                };"><i class="fas fa-code"></i>&nbsp; ${
+                                };"><i class="mdi mdi-code-tags"></i>&nbsp; ${
               repos[i].language
             }</span>
-                                <span><i class="fas fa-star"></i>&nbsp; ${
+                                <span><i class="mdi mdi-star"></i>&nbsp; ${
                                   repos[i].stargazers_count
                                 }</span>
-                                <span><i class="fas fa-code-branch"></i>&nbsp; ${
+                                <span><i class="mdi mdi-source-branch"></i>&nbsp; ${
                                   repos[i].forks_count
                                 }</span>
                             </div>
@@ -153,37 +153,37 @@ module.exports.updateHTML = (username, opts) =>
           document.getElementById("about").innerHTML = `
                 <span style="display:${
                   user.company == null || !user.company ? "none" : "block"
-                };"><i class="fas fa-users"></i> &nbsp; ${user.company}</span>
+                };"><i class="mdi-face"></i> &nbsp; ${user.company}</span>
                 <span style="display:${
                   user.email == null || !user.email ? "none" : "block"
-                };"><i class="fas fa-envelope"></i> &nbsp; ${user.email}</span>
+                };"><i class="mdi mdi-email"></i> &nbsp; ${user.email}</span>
                 <span style="display:${
                   user.location == null || !user.location ? "none" : "block"
-                };"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; ${
+                };"><i class="mdi mdi-map-marker"></i> &nbsp;&nbsp; ${
             user.location
           }</span>
                 <span style="display:${
                   user.hireable == false || !user.hireable ? "none" : "block"
-                };"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
+                };"><i class="mdi mdi-account-tie"></i> &nbsp;&nbsp; Available for hire</span>
                 <div class="socials">
                 <span style="display:${
                   twitter == null ? "none !important" : "block"
-                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><i class="fab fa-twitter"></i></a></span>
+                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><i class="mdi mdi-twitter"></i></a></span>
                 <span style="display:${
                   dribbble == null ? "none !important" : "block"
-                };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><i class="fab fa-dribbble"></i></a></span>
+                };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><i class="mdi mdi-dribbble"></i></a></span>
                 <span style="display:${
                   linkedin == null ? "none !important" : "block"
-                };"><a href="https://www.linkedin.com/in/${linkedin}/" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
+                };"><a href="https://www.linkedin.com/in/${linkedin}/" target="_blank" class="socials"><i class="mdi mdi-linkedin"></i></a></span>
                 <span style="display:${
                   medium == null ? "none !important" : "block"
-                };"><a href="https://www.medium.com/@${medium}/" target="_blank" class="socials"><i class="fab fa-medium-m"></i></a></span>
+                };"><a href="https://www.medium.com/@${medium}/" target="_blank" class="socials"><i class="mdi mdi-medium"></i></a></span>
                 <span style="display:${
                 telegram == null ? "none !important" : "block"
-                };"><a href="https://t.me/@${telegram}" target="_blank" class="socials"><i class="fab fa-telegram"></i></a></span>
+                };"><a href="https://t.me/@${telegram}" target="_blank" class="socials"><i class="mdi mdi-telegram"></i></a></span>
                 <span style="display:${
                 email == null ? "none !important" : "block"
-                };"><a href="mailto:${email}" target="_blank" class="socials"><i class="fas fa-envelope"></i></a></span>
+                };"><a href="mailto:${email}" target="_blank" class="socials"><i class="mdi mdi-email"></i></a></span>
                 </div>
                 `;
           //add data to config.json
