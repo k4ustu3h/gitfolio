@@ -96,12 +96,9 @@ async function buildCommand(username, program)
     order: program.order,
     includeFork: program.fork ? true : false,
     types,
-    twitter: program.twitter,
-    linkedin: program.linkedin,
-    medium: program.medium,
     dribbble: program.dribbble,
-    telegram: program.telegram,
-    email: program.email
+    email: program.email,
+    twitter: program.twitter
   };
 
   await populateConfig(opts);

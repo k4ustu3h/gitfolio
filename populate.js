@@ -50,12 +50,9 @@ module.exports.updateHTML = (username, opts) =>
   const
   {
     includeFork,
-    twitter,
-    linkedin,
-    medium,
     dribbble,
-    telegram,
-    email
+    email,
+    twitter
   } = opts;
   //add data to assets/index.html
   jsdom
@@ -167,23 +164,14 @@ module.exports.updateHTML = (username, opts) =>
                 };"><i class="mdi mdi-account-tie"></i> &nbsp;&nbsp; Available for hire</span>
                 <div class="socials">
                 <span style="display:${
-                  twitter == null ? "none !important" : "block"
-                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><i class="mdi mdi-twitter"></i></a></span>
-                <span style="display:${
                   dribbble == null ? "none !important" : "block"
                 };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><i class="mdi mdi-dribbble"></i></a></span>
                 <span style="display:${
-                  linkedin == null ? "none !important" : "block"
-                };"><a href="https://www.linkedin.com/in/${linkedin}/" target="_blank" class="socials"><i class="mdi mdi-linkedin"></i></a></span>
-                <span style="display:${
-                  medium == null ? "none !important" : "block"
-                };"><a href="https://www.medium.com/@${medium}/" target="_blank" class="socials"><i class="mdi mdi-medium"></i></a></span>
-                <span style="display:${
-                telegram == null ? "none !important" : "block"
-                };"><a href="https://t.me/@${telegram}" target="_blank" class="socials"><i class="mdi mdi-telegram"></i></a></span>
-                <span style="display:${
                 email == null ? "none !important" : "block"
                 };"><a href="mailto:${email}" target="_blank" class="socials"><i class="mdi mdi-email"></i></a></span>
+                <span style="display:${
+                  twitter == null ? "none !important" : "block"
+                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><i class="mdi mdi-twitter"></i></a></span>
                 </div>
                 `;
           //add data to config.json

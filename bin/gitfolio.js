@@ -42,12 +42,9 @@ program
   .option("-f, --fork", "includes forks with repos")
   .option("-s, --sort [sort]", "set default sort for repository", "created")
   .option("-o, --order [order]", "set default order on sort", "asc")
-  .option("-w, --twitter [username]", "specify twitter username")
-  .option("-l, --linkedin [username]", "specify linkedin username")
-  .option("-m, --medium [username]", "specify medium username")
   .option("-d, --dribbble [username]", "specify dribbble username")
-  .option("-T, --telegram [username]", "specify telegram username")
   .option("-e, --email [username]", "specify email")
+  .option("-T, --twitter [username]", "specify twitter username")
   .action(buildCommand);
 
 program
