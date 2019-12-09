@@ -4,15 +4,13 @@
   "description": "a portfolio website for everyone to showcase their work",
   "main": "build.js",
   "bin": "bin/gitfolio.js",
-  "scripts":
-  {
+  "scripts": {
     "cli": "OUT_DIR='./dist' node bin/gitfolio.js",
     "clean": "rm -rf ./dist/*",
     "prettier": "prettier --write \"./**/*.{js,jsx,json,html,css,md}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author":
-  {
+  "author": {
     "name": "@imfunniee and community",
     "email": "imfunny@wybemf.com",
     "url": "https://imfunniee.github.io"
@@ -27,14 +25,12 @@
     "gitfolio",
     "git"
   ],
-  "repository":
-  {
+  "repository": {
     "type": "git",
     "url": "https://github.com/imfunniee/gitfolio"
   },
   "license": "GPL-3.0",
-  "dependencies":
-  {
+  "dependencies": {
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "commander": "4.0.1",
@@ -46,6 +42,7 @@
     "jsdom": "^15.2.1",
     "ncp": "^2.0.0"
   },
-  "devDependencies":
-  {}
+  "devDependencies": {
+    "prettier": "1.19.1"
+  }
 }
