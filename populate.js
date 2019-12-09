@@ -4,33 +4,20 @@ const jsdom = require("jsdom").JSDOM,
   options = {
     resources: "usable"
   };
-const
-{
-  getConfig,
-  outDir
-} = require("./utils");
-const
-{
-  getRepos,
-  getUser
-} = require("./api");
+const { getConfig, outDir } = require("./utils");
+const { getRepos, getUser } = require("./api");
 
-function convertToEmoji(text)
-{
+function convertToEmoji(text) {
   if (text == null) return;
   text = text.toString();
   var pattern = /(?<=:\s*).*?(?=\s*:)/gs;
-  if (text.match(pattern) != null)
-  {
+  if (text.match(pattern) != null) {
     var str = text.match(pattern);
-    str = str.filter(function(arr)
-    {
+    str = str.filter(function(arr) {
       return /\S/.test(arr);
     });
-    for (i = 0; i < str.length; i++)
-    {
-      if (emoji.URLS[str[i]] != undefined)
-      {
+    for (i = 0; i < str.length; i++) {
+      if (emoji.URLS[str[i]] != undefined) {
         text = text.replace(
           `:${str[i]}:`,
           `<img src="${emoji.URLS[str[i]]}" class="emoji">`
@@ -38,17 +25,13 @@ function convertToEmoji(text)
       }
     }
     return text;
-  }
-  else
-  {
+  } else {
     return text;
   }
 }
 
-module.exports.updateHTML = (username, opts) =>
-{
-  const
-  {
+module.exports.updateHTML = (username, opts) => {
+  const {
     includeFork,
     codepen,
     dev,
@@ -60,31 +43,22 @@ module.exports.updateHTML = (username, opts) =>
   //add data to assets/index.html
   jsdom
     .fromFile(`${__dirname}/assets/index.html`, options)
-    .then(function(dom)
-    {
+    .then(function(dom) {
       let window = dom.window,
         document = window.document;
-      (async () =>
-      {
-        try
-        {
+      (async () => {
+        try {
           console.log("Building HTML/CSS...");
           const repos = await getRepos(username, opts);
 
-          for (var i = 0; i < repos.length; i++)
-          {
+          for (var i = 0; i < repos.length; i++) {
             let element;
-            if (repos[i].fork == false)
-            {
+            if (repos[i].fork == false) {
               element = document.getElementById("work_section");
-            }
-            else if (includeFork == true)
-            {
+            } else if (includeFork == true) {
               document.getElementById("forks").style.display = "block";
               element = document.getElementById("forks_section");
-            }
-            else
-            {
+            } else {
               continue;
             }
             element.innerHTML += `
@@ -137,9 +111,6 @@ module.exports.updateHTML = (username, opts) =>
           <meta name="twitter:title" content="${user.login}" />
           <meta name="twitter:description" content="${user.bio}" />`;
           document.getElementById(
-            "profile_img"
-          ).style.background = `url('${user.avatar_url}') center center`;
-          document.getElementById(
             "username"
           ).innerHTML = `<span style="display:${
             user.name == null || !user.name ? "none" : "block"
@@ -176,7 +147,7 @@ module.exports.updateHTML = (username, opts) =>
                   dribbble == null ? "none !important" : "block"
                 };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><i class="mdi mdi-dribbble"></i></a></span>
                 <span style="display:${
-                email == null ? "none !important" : "block"
+                  email == null ? "none !important" : "block"
                 };"><a href="mailto:${email}" target="_blank" class="socials"><i class="mdi mdi-email"></i></a></span>
                 <span style="display:${
                   instagram == null ? "none !important" : "block"
@@ -195,8 +166,7 @@ module.exports.updateHTML = (username, opts) =>
           await fs.writeFile(
             `${outDir}/config.json`,
             JSON.stringify(data, null, " "),
-            function(err)
-            {
+            function(err) {
               if (err) throw err;
               console.log("Config file updated.");
             }
@@ -204,21 +174,17 @@ module.exports.updateHTML = (username, opts) =>
           await fs.writeFile(
             `${outDir}/index.html`,
             "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
-            function(error)
-            {
+            function(error) {
               if (error) throw error;
               console.log(`Build Complete, Files can be Found @ ${outDir}\n`);
             }
           );
-        }
-        catch (error)
-        {
+        } catch (error) {
           console.log(error);
         }
       })();
     })
-    .catch(function(error)
-    {
+    .catch(function(error) {
       console.log(error);
     });
 };
