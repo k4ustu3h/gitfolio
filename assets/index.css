@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Asap");
-@import url('https://fonts.googleapis.com/css?family=Asap+Condensed');
+@import url("https://fonts.googleapis.com/css?family=Asap|Asap+Condensed");
 
 body {
   margin: 0%;
@@ -11,42 +10,6 @@ body {
   overflow-x: hidden;
   align-items: center;
   font-family: "Asap", sans-serif;
-}
-
-#loading {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background: var(--bg-color);
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-#spinner {
-  animation: rotate 0.5s infinite linear;
-  width: 50px;
-  height: 50px;
-  border: 2px solid var(--bg-color);
-  border-bottom: 2px solid var(--text-color);
-  border-radius: 50%;
-  margin: 0;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 #profile {
@@ -281,14 +244,6 @@ body {
   font-weight: normal !important;
 }
 
-.go_back {
-  position: absolute;
-  color: var(--text-color);
-  font-size: 26px;
-  margin-left: 5vw;
-  margin-top: 4vh;
-}
-
 ::selection {
   color: var(--bg-color);
   background: var(--text-color);
@@ -336,14 +291,6 @@ body {
 
   .projects section {
     width: 88%;
-  }
-
-  .go_back {
-    position: relative;
-    color: var(--text-color);
-    font-size: 26px;
-    margin-left: 5vw;
-    top: 5vh;
   }
 }
 
