@@ -97,13 +97,26 @@ body {
 #profile_img {
   width: 180px;
   height: 180px;
-  min-width: 180px;
-  min-height: 180px;
-  max-width: 180px;
-  max-height: 180px;
-  border-radius: 5px;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
+  background: var(--gradient);
+  transition: background 0.5s ease;
+  background-size: 300% 300%;
+  animation: grad 8s ease infinite;
+  -webkit-background-clip: text;
+  font-size: 128px;
+  font-family: "Asap Condensed", sans-serif;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes grad {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #profile div {
@@ -267,13 +280,27 @@ body {
   }
 
   #profile_img {
-    width: 120px;
-    height: 120px;
-    min-width: 120px;
-    min-height: 120px;
-    max-width: 120px;
-    max-height: 120px;
     margin: 0px auto !important;
+    background: var(--gradient);
+    transition: background 0.5s ease;
+    background-size: 300% 300%;
+    animation: grad 8s ease infinite;
+    -webkit-background-clip: text;
+    font-size: 128px;
+    font-family: "Asap Condensed", sans-serif;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes grad {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   #work {
@@ -387,15 +414,20 @@ body {
 :root {
   --bg-color: rgb(10, 10, 10);
   --text-color: #fff;
-  --background-image: linear-gradient(90deg,
-    rgba(10, 10, 10, 0.3),
-    rgb(10, 10, 10, 1)),
-  url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80");
-  --background-background: linear-gradient(0deg,
-    rgba(10, 10, 10, 1),
-    rgba(10, 10, 10, 0.6)),
-  url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80") center center fixed;
+  --background-image: linear-gradient(
+      90deg,
+      rgba(10, 10, 10, 0.3),
+      rgb(10, 10, 10, 1)
+    ),
+    url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80");
+  --background-background: linear-gradient(
+      0deg,
+      rgba(10, 10, 10, 1),
+      rgba(10, 10, 10, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80") center center fixed;
   --height: 50vh;
+  --gradient: linear-gradient(90deg, #009bef, #ff0000);
 }
 
 #display h1 {
@@ -410,9 +442,11 @@ body {
 
 @media (max-width: 800px) {
   :root {
-    --background-image: linear-gradient(0deg,
-      rgba(10, 10, 10, 1),
-      rgba(10, 10, 10, 0)),
-    url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80") !important;
+    --background-image: linear-gradient(
+        0deg,
+        rgba(10, 10, 10, 1),
+        rgba(10, 10, 10, 0)
+      ),
+      url("https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80") !important;
   }
 }
