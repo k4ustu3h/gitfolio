@@ -11,14 +11,10 @@ const defaultConfigPath = path.resolve(`${__dirname}/default/config.json`);
  * Tries to read file from out dir,
  * if not present returns default file contents
  */
-async function getFileWithDefaults(file, defaultFile)
-{
-  try
-  {
+async function getFileWithDefaults(file, defaultFile) {
+  try {
     await fs.accessAsync(file, fs.constants.F_OK);
-  }
-  catch (err)
-  {
+  } catch (err) {
     const defaultData = await fs.readFileAsync(defaultFile);
     return JSON.parse(defaultData);
   }
@@ -26,8 +22,7 @@ async function getFileWithDefaults(file, defaultFile)
   return JSON.parse(data);
 }
 
-async function getConfig()
-{
+async function getConfig() {
   return getFileWithDefaults(configPath, defaultConfigPath);
 }
 
