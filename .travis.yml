@@ -16,11 +16,10 @@ script:
 after_success:
   - lhci autorun --upload.target=temporary-public-storage --staticDistDir=/home/travis/build/k4ustu3h/gitfolio/dist
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
+  provider: pages:git
+  token: $GITHUB_TOKEN
+  cleanup: false
+  edge: true # opt in to dpl v2
   local_dir: dist
   verbose: true
-  on:
-    branch: master
+  fqdn: k4ustu3h.cf
