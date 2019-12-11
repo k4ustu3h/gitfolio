@@ -1,31 +1,19 @@
 const fs = require("fs");
 const express = require("express");
-const
-{
-  updateHTML
-} = require("./populate");
-const
-{
-  populateCSS,
-  populateConfig
-} = require("./build");
-const
-{
-  updateCommand
-} = require("./update");
+const { updateHTML } = require("./populate");
+const { populateCSS, populateConfig } = require("./build");
+const { updateCommand } = require("./update");
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/views"));
 app.set("views", __dirname + "/views");
 app.use(
-  express.json(
-  {
+  express.json({
     limit: "50mb"
   })
 );
 app.use(
-  express.urlencoded(
-  {
+  express.urlencoded({
     limit: "50mb",
     extended: true
   })
@@ -39,17 +27,13 @@ const jsdom = require("jsdom").JSDOM,
   };
 global.DOMParser = new jsdom().window.DOMParser;
 
-function uiCommand()
-{
-  app.get("/", function(req, res)
-  {
+function uiCommand() {
+  app.get("/", function(req, res) {
     res.render("index.ejs");
   });
 
-  app.get("/update", function(req, res)
-  {
-    if (!fs.existsSync(`${outDir}/config.json`))
-    {
+  app.get("/update", function(req, res) {
+    if (!fs.existsSync(`${outDir}/config.json`)) {
       return res.send(
         'You need to run build command before using update<br><a href="/">Go Back</a>'
       );
@@ -58,11 +42,9 @@ function uiCommand()
     res.redirect("/");
   });
 
-  app.post("/build", function(req, res)
-  {
+  app.post("/build", function(req, res) {
     let username = req.body.username;
-    if (!username)
-    {
+    if (!username) {
       return res.send("username can't be empty");
     }
     let sort = req.body.sort ? req.body.sort : "created";
@@ -75,9 +57,9 @@ function uiCommand()
     let email = req.body.email ? req.body.email : null;
     let instagram = req.body.instagram ? req.body.instagram : null;
     let twitter = req.body.twitter ? req.body.twitter : null;
-    let background = req.body.background ?
-      req.body.background :
-      "https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1500&q=80";
+    let background = req.body.background
+      ? req.body.background
+      : "https://source.unsplash.com/1600x900/?wallpaper";
     let theme = req.body.theme == "on" ? "dark" : "light";
     const opts = {
       sort: sort,
@@ -93,8 +75,7 @@ function uiCommand()
     };
 
     updateHTML(username, opts);
-    populateCSS(
-    {
+    populateCSS({
       background: background,
       theme: theme
     });
