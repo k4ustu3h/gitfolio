@@ -112,9 +112,11 @@ module.exports.updateHTML = (username, opts) => {
           <meta name="twitter:description" content="${user.bio}" />`;
           document.getElementById(
             "username"
-          ).innerHTML = `<span style="display:${
+          ).innerHTML = `<span id="text" style="display:${
             user.name == null || !user.name ? "none" : "block"
-          };">${user.name}</span><a href="${user.html_url}">@${user.login}</a>`;
+          };"></span><div class='console-underscore' id='console'>&#95;</div><br><a href="${
+            user.html_url
+          }">@${user.login}</a>`;
           //document.getElementById("github_link").href = `https://github.com/${user.login}`;
           document.getElementById("userbio").innerHTML = convertToEmoji(
             user.bio

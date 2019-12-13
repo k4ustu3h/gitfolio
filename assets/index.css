@@ -124,15 +124,26 @@ body {
   margin: 1.5vh 0px;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 #username {
-  font-size: 18px;
-  font-weight: bold;
   font-family: "Asap Condensed", sans-serif;
+  font-size: 18px;
+  color: white;
 }
 
 #username span {
   font-size: 24px;
   font-family: "Asap Condensed", sans-serif;
+}
+
+.console-underscore {
+  display: inline-block;
+  position: relative;
+  top: -0.14em;
+  left: 10px;
 }
 
 #userbio {
