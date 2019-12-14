@@ -20,6 +20,7 @@ async function updateCommand() {
     dribbble: data[0].dribbble,
     email: data[0].email,
     instagram: data[0].instagram,
+    telegram: data[0].telegram,
     twitter: data[0].twitter
   };
   updateHTML(username, opts);

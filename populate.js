@@ -38,6 +38,7 @@ module.exports.updateHTML = (username, opts) => {
     dribbble,
     email,
     instagram,
+    telegram,
     twitter
   } = opts;
   //add data to assets/index.html
@@ -154,6 +155,9 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   instagram == null ? "none !important" : "block"
                 };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials"><i class="mdi mdi-instagram"></i></a></span>
+                <span style="display:${
+                  telegram == null ? "none !important" : "block"
+                };"><a href="https://t.me/${telegram}" target="_blank" class="socials"><i class="mdi mdi-telegram"></i></a></span>
                 <span style="display:${
                   twitter == null ? "none !important" : "block"
                 };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><i class="mdi mdi-twitter"></i></a></span>

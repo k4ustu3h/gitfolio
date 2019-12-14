@@ -82,6 +82,7 @@ async function buildCommand(username, program) {
     dribbble: program.dribbble,
     email: program.email,
     instagram: program.instagram,
+    telegram: program.telegram,
     twitter: program.twitter
   };
 
