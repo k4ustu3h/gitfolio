@@ -31,6 +31,7 @@ program
   .option("-D, --dribbble [username]", "specify dribbble username")
   .option("-e, --email [username]", "specify email")
   .option("-i, --instagram [username]", "specify instagram username")
+  .option("-r, --reddit [username]", "specify reddit username")
   .option("-T, --telegram [username]", "specify telegram username")
   .option("-w, --twitter [username]", "specify twitter username")
   .action(buildCommand);

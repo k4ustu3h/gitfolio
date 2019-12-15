@@ -56,6 +56,7 @@ function uiCommand() {
     let dribbble = req.body.dribbble ? req.body.dribbble : null;
     let email = req.body.email ? req.body.email : null;
     let instagram = req.body.instagram ? req.body.instagram : null;
+    let reddit = req.body.reddit ? req.body.reddit : null;
     let telegram = req.body.telegram ? req.body.telegram : null;
     let twitter = req.body.twitter ? req.body.twitter : null;
     let background = req.body.background
@@ -72,6 +73,7 @@ function uiCommand() {
       dribbble: dribbble,
       email: email,
       instagram: instagram,
+      reddit: reddit,
       telegram: telegram,
       twitter: twitter
     };
