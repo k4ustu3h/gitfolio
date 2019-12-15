@@ -6,6 +6,12 @@
         "parser": "html",
         "htmlWhitespaceSensitivity": "ignore"
       }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "tabWidth": 4
+      }
     }
   ]
 }
