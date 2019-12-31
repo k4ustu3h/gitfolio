@@ -12,7 +12,7 @@ before_install:
 before_script:
   - npm install -g
 script:
-  - gitfolio build k4ustu3h --fork --theme dark --sort updated --twitter k4ustu3h_ --dribbble k4ustu3h --email k4ustu3h@gmail.com --codepen k4ustu3h --dev k4ustu3h --instagram k4ustu3h --telegram k4ustu3h --reddit kaustubhladiya
+  - npm run test
 after_success:
   - lhci autorun --upload.target=temporary-public-storage --staticDistDir=/home/travis/build/k4ustu3h/gitfolio/dist
 deploy:
