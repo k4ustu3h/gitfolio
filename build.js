@@ -20,7 +20,7 @@ const config = path.join(outDir, "config.json");
  */
 async function populateCSS({
   theme = "light",
-  background = "https://source.unsplash.com/1600x900/?wallpaper"
+  background = "https://source.unsplash.com/1280x720/?wallpaper"
 } = {}) {
   /* Get the theme the user requests. Defaults to 'light' */
   theme = `${theme}.css`;

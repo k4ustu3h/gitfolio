@@ -61,7 +61,7 @@ function uiCommand() {
     let twitter = req.body.twitter ? req.body.twitter : null;
     let background = req.body.background
       ? req.body.background
-      : "https://source.unsplash.com/1600x900/?wallpaper";
+      : "https://source.unsplash.com/1280x720/?wallpaper";
     let theme = req.body.theme == "on" ? "dark" : "light";
     const opts = {
       sort: sort,
