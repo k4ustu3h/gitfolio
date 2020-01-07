@@ -430,13 +430,13 @@ body {
       rgba(10, 10, 10, 0.3),
       rgb(10, 10, 10, 1)
     ),
-    url("https://source.unsplash.com/1600x900/?wallpaper");
+    url("https://source.unsplash.com/1280x720/?wallpaper");
   --background-background: linear-gradient(
       0deg,
       rgba(10, 10, 10, 1),
       rgba(10, 10, 10, 0.6)
     ),
-    url("https://source.unsplash.com/1600x900/?wallpaper") center center fixed;
+    url("https://source.unsplash.com/1280x720/?wallpaper") center center fixed;
   --height: 50vh;
   --gradient: linear-gradient(90deg, #009bef, #ff0000);
 }
@@ -458,6 +458,6 @@ body {
         rgba(10, 10, 10, 1),
         rgba(10, 10, 10, 0)
       ),
-      url("https://source.unsplash.com/1600x900/?wallpaper") !important;
+      url("https://source.unsplash.com/1280x720/?wallpaper") !important;
   }
 }
