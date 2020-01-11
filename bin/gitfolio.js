@@ -5,56 +5,63 @@ const program = require("commander");
 
 process.env.OUT_DIR = process.env.OUT_DIR || process.cwd();
 
-const { buildCommand } = require("../build");
-const { updateCommand } = require("../update");
-const { uiCommand } = require("../ui");
-const { runCommand } = require("../run");
-const { version } = require("../package.json");
+const {buildCommand} = require("../build");
+const {updateCommand} = require("../update");
+const {uiCommand} = require("../ui");
+const {runCommand} = require("../run");
+const {version} = require("../package.json");
 
 function collect(val, memo) {
-  memo.push(val);
-  return memo;
+	memo.push(val);
+	return memo;
 }
 
 program
-  .command("build <username>")
-  .description(
-    "Build site with your GitHub username. This will be used to customize your site"
-  )
-  .option("-t, --theme [theme]", "specify a theme to use", "light")
-  .option("-b, --background [background]", "set the background image")
-  .option("-f, --fork", "includes forks with repos")
-  .option("-s, --sort [sort]", "set default sort for repository", "created")
-  .option("-o, --order [order]", "set default order on sort", "asc")
-  .option("-c, --codepen [username]", "specify codepen username")
-  .option("-d, --dev [username]", "specify dev username")
-  .option("-D, --dribbble [username]", "specify dribbble username")
-  .option("-e, --email [username]", "specify email")
-  .option("-i, --instagram [username]", "specify instagram username")
-  .option("-r, --reddit [username]", "specify reddit username")
-  .option("-T, --telegram [username]", "specify telegram username")
-  .option("-w, --twitter [username]", "specify twitter username")
-  .action(buildCommand);
+	.command("build <username>")
+	.description(
+		"Build site with your GitHub username. This will be used to customize your site"
+	)
+	.option("-t, --theme [theme]", "specify a theme to use", "light")
+	.option("-b, --background [background]", "set the background image")
+	.option("-f, --fork", "includes forks with repos")
+	.option("-s, --sort [sort]", "set default sort for repository", "created")
+	.option("-o, --order [order]", "set default order on sort", "asc")
+	.option("-c, --codepen [username]", "specify codepen username")
+	.option("-d, --dev [username]", "specify dev username")
+	.option("-D, --dribbble [username]", "specify dribbble username")
+	.option("-e, --email [username]", "specify email")
+	.option("-i, --instagram [username]", "specify instagram username")
+	.option("-r, --reddit [username]", "specify reddit username")
+	.option("-T, --telegram [username]", "specify telegram username")
+	.option("-w, --twitter [username]", "specify twitter username")
+	.action(buildCommand);
 
 program
-  .command("update")
-  .description("Update user and repository data")
-  .action(updateCommand);
+	.command("update")
+	.description("Update user and repository data")
+	.action(updateCommand);
 
 program
-  .command("run")
-  .description("Run build files")
-  .option("-p, --port [port]", "provide a port for localhost, default is 3000")
-  .action(runCommand);
+	.command("ui")
+	.description("Create and Manage gitfolio with ease")
+	.action(uiCommand);
+
+program
+	.command("run")
+	.description("Run build files")
+	.option("-p, --port [port]", "provide a port for localhost, default is 3000")
+	.action(runCommand);
 
 program.on("command:*", () => {
-  console.log("Unknown Command: " + program.args.join(" "));
-  program.help();
+	console.log("Unknown Command: " + program.args.join(" "));
+	program.help();
 });
 
 program
-  .version(version, "-v --version")
-  .usage("<command> [options]")
-  .parse(process.argv);
+	.version(version, "-v --version")
+	.usage("<command> [options]")
+	.parse(process.argv);
 
-if (program.args.length === 0) program.help();
+if (program.args.length === 0) {
+	program.help();
+}
