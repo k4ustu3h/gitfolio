@@ -1,9 +1,6 @@
 const fs = require("fs");
 const express = require("express");
 const jsdom = require("jsdom").JSDOM;
-const options = {
-  resources: "usable"
-};
 const { updateHTML } = require("./populate");
 const { populateCSS, populateConfig } = require("./build");
 const { updateCommand } = require("./update");
@@ -26,6 +23,7 @@ app.use(
 const port = 3000;
 
 global.DOMParser = new jsdom().window.DOMParser;
+const { outDir } = require("./utils");
 
 function uiCommand() {
   app.get("/", (req, res) => {
