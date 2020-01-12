@@ -12,22 +12,22 @@ const defaultConfigPath = path.resolve(`${__dirname}/default/config.json`);
  * if not present returns default file contents
  */
 async function getFileWithDefaults(file, defaultFile) {
-	try {
-		await fs.accessAsync(file, fs.constants.F_OK);
-	} catch (error) {
-		const defaultData = await fs.readFileAsync(defaultFile);
-		return JSON.parse(defaultData);
-	}
+  try {
+    await fs.accessAsync(file, fs.constants.F_OK);
+  } catch (error) {
+    const defaultData = await fs.readFileAsync(defaultFile);
+    return JSON.parse(defaultData);
+  }
 
-	const data = await fs.readFileAsync(file);
-	return JSON.parse(data);
+  const data = await fs.readFileAsync(file);
+  return JSON.parse(data);
 }
 
 async function getConfig() {
-	return getFileWithDefaults(configPath, defaultConfigPath);
+  return getFileWithDefaults(configPath, defaultConfigPath);
 }
 
 module.exports = {
-	outDir,
-	getConfig
+  outDir,
+  getConfig
 };
