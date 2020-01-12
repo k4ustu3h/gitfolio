@@ -13,6 +13,7 @@ before_script:
   - npm install -g
 script:
   - npm run test
+  - npm run prettier
 after_success:
   - lhci autorun --upload.target=temporary-public-storage --staticDistDir=/home/travis/build/k4ustu3h/gitfolio/dist
 deploy:

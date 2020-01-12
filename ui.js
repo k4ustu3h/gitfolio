@@ -58,6 +58,7 @@ function uiCommand() {
     const dribbble = req.body.dribbble ? req.body.dribbble : null;
     const email = req.body.email ? req.body.email : null;
     const instagram = req.body.instagram ? req.body.instagram : null;
+    const keybase = req.body.keybase ? req.body.keybase : null;
     const reddit = req.body.reddit ? req.body.reddit : null;
     const telegram = req.body.telegram ? req.body.telegram : null;
     const twitter = req.body.twitter ? req.body.twitter : null;
@@ -75,6 +76,7 @@ function uiCommand() {
       dribbble,
       email,
       instagram,
+      keybase,
       reddit,
       telegram,
       twitter
