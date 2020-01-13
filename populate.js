@@ -119,7 +119,7 @@ module.exports.updateHTML = (username, opts) => {
             user.name == null || !user.name ? "none" : "block"
           };"></span><div class='console-underscore' id='console'>&#95;</div><br><a href="${
             user.html_url
-          }">@${user.login}</a>`;
+          }"><i class="mdi mdi-github-circle"></i> @${user.login}</a>`;
           //document.getElementById("github_link").href = `https://github.com/${user.login}`;
           document.getElementById("userbio").innerHTML = convertToEmoji(
             user.bio
