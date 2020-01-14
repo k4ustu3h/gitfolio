@@ -118,10 +118,7 @@ module.exports.updateHTML = (username, opts) => {
             "username"
           ).innerHTML = `<span id="text" style="display:${
             user.name == null || !user.name ? "none" : "block"
-          };"></span><div class='console-underscore' id='console'>&#95;</div><br><a href="${
-            user.html_url
-          }"><i class="mdi mdi-github-circle"></i> @${user.login}</a>`;
-          //document.getElementById("github_link").href = `https://github.com/${user.login}`;
+          };"></span><div class='console-underscore' id='console'>&#95;</div>`;
           document.getElementById("userbio").innerHTML = convertToEmoji(
             user.bio
           );
@@ -134,6 +131,12 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   user.email == null || !user.email ? "none" : "block"
                 };"><i class="mdi mdi-email"></i> &nbsp; ${user.email}</span>
+                <span style="display:block;"><a href="${
+                  user.html_url
+                }"><i class="mdi mdi-github-circle"></i>&nbsp;&nbsp; @${
+            user.login
+          }</a>
+                </span>
                 <span style="display:${
                   user.location == null || !user.location ? "none" : "block"
                 };"><i class="mdi mdi-map-marker"></i> &nbsp;&nbsp; ${
