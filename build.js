@@ -84,6 +84,7 @@ async function buildCommand(username, program) {
     dev: program.dev,
     dribbble: program.dribbble,
     email: program.email,
+    facebook: program.facebook,
     instagram: program.instagram,
     keybase: program.keybase,
     reddit: program.reddit,

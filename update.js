@@ -20,6 +20,7 @@ async function updateCommand() {
     dev: data[0].dev,
     dribbble: data[0].dribbble,
     email: data[0].email,
+    facebook: data[0].facebook,
     instagram: data[0].instagram,
     keybase: data[0].keybase,
     reddit: data[0].reddit,
