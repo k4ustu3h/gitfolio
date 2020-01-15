@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Asap|Asap+Condensed");
-
 body {
   margin: 0%;
   padding: 0%;
@@ -9,7 +7,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   align-items: center;
-  font-family: "Asap", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 #profile {
@@ -90,7 +88,7 @@ body {
 #footer a {
   color: var(--text-color) !important;
   text-decoration: none;
-  font-family: "Asap", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
 
