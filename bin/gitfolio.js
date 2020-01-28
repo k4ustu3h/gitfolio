@@ -29,7 +29,7 @@ program
   .option("-c, --codepen [username]", "specify codepen username")
   .option("-d, --dev [username]", "specify dev username")
   .option("-D, --dribbble [username]", "specify dribbble username")
-  .option("-e, --email [username]", "specify email")
+  .option("-e, --email [email]", "specify email")
   .option("-f, --facebook [username]", "specify facebook username")
   .option("-i, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
