@@ -1,17 +1,17 @@
-<img src="https://i.imgur.com/eA6clZr.png">
-
-# Gitfolio
-
-![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)
 [![Build Status](https://img.shields.io/travis/k4ustu3h/gitfolio?style=for-the-badge)](https://travis-ci.org/k4ustu3h/gitfolio)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 [![Dependency Status](https://img.shields.io/david/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio)
 [![devDependencies Status](https://img.shields.io/david/dev/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio?type=dev)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/k4ustu3h/gitfolio?style=for-the-badge)
+[![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
+[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/k4ustu3h/gitfolio?style=for-the-badge)](https://snyk.io/test/github/k4ustu3h/gitfolio?targetFile=package.json)
+
+# Gitfolio
 
 ### personal website + blog for every github user
 
 Gitfolio will help you get started with a portfolio website where you could showcase your work + a blog that will help you spread your ideas into real world.
+
+<img src="https://i.imgur.com/eA6clZr.png">
 
 ---
 
@@ -157,11 +157,19 @@ To Update background or theme you need to run `build` command again.
 
 ### License
 
-![License](https://img.shields.io/github/license/imfunniee/gitfolio.svg?style=for-the-badge)
+[![License](https://img.shields.io/github/license/k4ustu3h/gitfolio.svg?style=for-the-badge)](https://github.com/k4ustu3h/gitfolio/blob/master/LICENSE)
 
 ---
 
 ## Acknowledgments
 
 -   Hat tip to anyone who's code was used
--   The original [gitfolio](https://github.com/imfunniee/gitfolio) made by [@imfunnie](https://github.com/imfunniee/)
+-   The original [gitfolio](https://github.com/imfunniee/gitfolio) made by [@imfunniee](https://github.com/imfunniee/)
+
+---
+
+[![JavaScript](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://github.com/topics/javascript)
+[![HTML](https://forthebadge.com/images/badges/uses-html.svg)](https://github.com/topics/html)
+[![CSS](https://forthebadge.com/images/badges/uses-css.svg)](https://github.com/topics/css)
+[![h9rbs.js](https://forthebadge.com/images/badges/uses-h9rbs.svg)](https://html9responsiveboilerstrapjs.com/)
+[![Electricity](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com)
