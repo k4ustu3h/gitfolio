@@ -1,11 +1,11 @@
-/* Filepath utilities */
+// Filepath utilities
 const path = require("path");
-/* Promise library */
+// Promise library
 const bluebird = require("bluebird");
 const hbs = require("handlebars");
-/*  Creates promise-returning async functions
-    from callback-passed async functions      */
+//  Creates promise-returning async functions from callback-passed async functions
 const fs = bluebird.promisifyAll(require("fs"));
+const fse = require("fs-extra");
 const { updateHTML } = require("./populate");
 const { getConfig, outDir } = require("./utils");
 
@@ -22,10 +22,12 @@ async function populateCSS({
   theme = "light",
   background = "https://source.unsplash.com/1280x720/?wallpaper"
 } = {}) {
-  /* Get the theme the user requests. Defaults to 'light' */
+  // Get the theme the user requests. Defaults to 'light'
   theme = `${theme}.css`;
   const template = path.resolve(assetDir, "index.css");
   const stylesheet = path.join(outDir, "index.css");
+  const tempfont = path.resolve(assetDir, "fonts");
+  const fonts = path.join(outDir, "assets/fonts");
 
   try {
     await fs.accessAsync(outDir, fs.constants.F_OK);
@@ -33,10 +35,13 @@ async function populateCSS({
     await fs.mkdirAsync(outDir);
   }
 
-  /* Copy over the template CSS stylesheet */
+  // Copy over the template CSS stylesheet
   await fs.copyFileAsync(template, stylesheet);
 
-  /* Get an array of every available theme */
+  // Copy Fonts
+  fse.copySync(tempfont, fonts);
+
+  // Get an array of every available theme
   const themes = await fs.readdirAsync(path.join(assetDir, "themes"));
 
   if (!themes.includes(theme)) {
@@ -44,17 +49,17 @@ async function populateCSS({
     theme = "light";
   }
 
-  /* Read in the theme stylesheet */
+  // Read in the theme stylesheet
   let themeSource = await fs.readFileSync(path.join(assetDir, "themes", theme));
   themeSource = themeSource.toString("utf-8");
   const themeTemplate = hbs.compile(themeSource);
   const styles = themeTemplate({
     background: `${background}`
   });
-  /* Add the user-specified styles to the new stylesheet */
+  // Add the user-specified styles to the new stylesheet
   await fs.appendFileAsync(stylesheet, styles);
 
-  /* Update the config file with the user's theme choice */
+  // Update the config file with the user's theme choice
   const data = await getConfig();
   data[0].theme = theme;
   await fs.writeFileAsync(config, JSON.stringify(data, null, " "));
