@@ -128,20 +128,21 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   user.company == null || !user.company ? "none" : "block"
                 };"><i class="mdi-face"></i> &nbsp; ${user.company}</span>
-                <span style="display:${
-                  user.email == null || !user.email ? "none" : "block"
-                };"><i class="mdi mdi-email"></i> &nbsp; ${user.email}</span>
                 <span style="display:block;"><a href="${
                   user.html_url
-                }"><i class="mdi mdi-github-circle"></i>&nbsp;&nbsp; @${
+                }"><i class="mdi mdi-github-circle"></i>&nbsp;&nbsp;@${
             user.login
-          }</a>
-                </span>
+          }</a></span>
+                <span style="display:${
+                  email == null ? "none !important" : "block"
+                };"><a href="mailto:${email}" target="_blank" class="socials"><i class="mdi mdi-email"></i>&nbsp;&nbsp;${email}</a></span>
                 <span style="display:${
                   user.location == null || !user.location ? "none" : "block"
-                };"><i class="mdi mdi-map-marker"></i> &nbsp;&nbsp; ${
+                };"><a href="https://www.google.com/maps/search/?api=1&query=${
             user.location
-          }</span>
+          }"<i class="mdi mdi-map-marker"></i>&nbsp;&nbsp;${
+            user.location
+          }</a></span>
                 <span style="display:${
                   user.hireable == false || !user.hireable ? "none" : "block"
                 };"><i class="mdi mdi-account-tie"></i> &nbsp;&nbsp; Available for hire</span>
@@ -155,9 +156,7 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   dribbble == null ? "none !important" : "block"
                 };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><i class="mdi mdi-dribbble"></i></a></span>
-                <span style="display:${
-                  email == null ? "none !important" : "block"
-                };"><a href="mailto:${email}" target="_blank" class="socials"><i class="mdi mdi-email"></i></a></span>
+
                 <span style="display:${
                   facebook == null ? "none !important" : "block"
                 };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials"><i class="mdi mdi-facebook-box"></i></a></span>
