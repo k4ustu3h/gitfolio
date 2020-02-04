@@ -23,19 +23,20 @@ program
   )
   .option("-t, --theme [theme]", "specify a theme to use", "light")
   .option("-b, --background [background]", "set the background image")
-  .option("-F, --fork", "includes forks with repos")
+  .option("-f, --fork", "includes forks with repos")
   .option("-s, --sort [sort]", "set default sort for repository", "created")
   .option("-o, --order [order]", "set default order on sort", "asc")
   .option("-c, --codepen [username]", "specify codepen username")
   .option("-d, --dev [username]", "specify dev username")
   .option("-D, --dribbble [username]", "specify dribbble username")
   .option("-e, --email [email]", "specify email")
-  .option("-f, --facebook [username]", "specify facebook username")
+  .option("-F, --facebook [username]", "specify facebook username")
   .option("-i, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
   .option("-r, --reddit [username]", "specify reddit username")
   .option("-T, --telegram [username]", "specify telegram username")
   .option("-w, --twitter [username]", "specify twitter username")
+  .option("-x, --xda [user id]", "specify xda user id")
   .action(buildCommand);
 
 program

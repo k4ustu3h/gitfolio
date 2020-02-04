@@ -94,7 +94,8 @@ async function buildCommand(username, program) {
     keybase: program.keybase,
     reddit: program.reddit,
     telegram: program.telegram,
-    twitter: program.twitter
+    twitter: program.twitter,
+    xda: program.xda
   };
 
   await populateConfig(opts);

@@ -25,7 +25,8 @@ async function updateCommand() {
     keybase: data[0].keybase,
     reddit: data[0].reddit,
     telegram: data[0].telegram,
-    twitter: data[0].twitter
+    twitter: data[0].twitter,
+    xda: data[0].xda
   };
   updateHTML(username, opts);
 }

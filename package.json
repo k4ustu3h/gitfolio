@@ -5,7 +5,7 @@
   "main": "build.js",
   "bin": "bin/gitfolio.js",
   "scripts": {
-    "build": "OUT_DIR='./dist' node bin/gitfolio.js build k4ustu3h --fork --theme dark --sort updated --twitter k4ustu3h_ --dribbble k4ustu3h --email k4ustu3h@gmail.com --codepen k4ustu3h --dev k4ustu3h --instagram k4ustu3h --telegram k4ustu3h --reddit kaustubhladiya --keybase k4ustu3h --facebook k4ustu3h",
+    "build": "OUT_DIR='./dist' node bin/gitfolio.js build k4ustu3h -f -t dark -s updated -c k4ustu3h -d k4ustu3h -D k4ustu3h -e k4ustu3h@gmail.com -F k4ustu3h -i k4ustu3h_ -k k4ustu3h -r kaustubhladiya -T k4ustu3h -w k4ustu3h_ -x 9461231",
     "cli": "OUT_DIR='./dist' node bin/gitfolio.js",
     "clean": "rm -rf ./dist/*",
     "prettier": "prettier --write \"./**/*.{js,jsx,json,html,css,md}\"",

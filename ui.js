@@ -61,6 +61,7 @@ function uiCommand() {
     const reddit = req.body.reddit ? req.body.reddit : null;
     const telegram = req.body.telegram ? req.body.telegram : null;
     const twitter = req.body.twitter ? req.body.twitter : null;
+    const xda = req.body.xda ? req.body.xda : null;
     const background = req.body.background
       ? req.body.background
       : "https://source.unsplash.com/1280x720/?wallpaper";
@@ -79,7 +80,8 @@ function uiCommand() {
       keybase,
       reddit,
       telegram,
-      twitter
+      twitter,
+      xda
     };
 
     updateHTML(username, opts);
