@@ -5,7 +5,6 @@ const bluebird = require("bluebird");
 const hbs = require("handlebars");
 //  Creates promise-returning async functions from callback-passed async functions
 const fs = bluebird.promisifyAll(require("fs"));
-const fse = require("fs-extra");
 const { updateHTML } = require("./populate");
 const { getConfig, outDir } = require("./utils");
 
@@ -26,8 +25,6 @@ async function populateCSS({
   theme = `${theme}.css`;
   const template = path.resolve(assetDir, "index.css");
   const stylesheet = path.join(outDir, "index.css");
-  const tempfont = path.resolve(assetDir, "fonts");
-  const fonts = path.join(outDir, "assets/fonts");
 
   try {
     await fs.accessAsync(outDir, fs.constants.F_OK);
@@ -37,9 +34,6 @@ async function populateCSS({
 
   // Copy over the template CSS stylesheet
   await fs.copyFileAsync(template, stylesheet);
-
-  // Copy Fonts
-  fse.copySync(tempfont, fonts);
 
   // Get an array of every available theme
   const themes = await fs.readdirAsync(path.join(assetDir, "themes"));
