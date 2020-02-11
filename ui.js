@@ -58,7 +58,12 @@ function uiCommand() {
     const facebook = req.body.facebook ? req.body.facebook : null;
     const instagram = req.body.instagram ? req.body.instagram : null;
     const keybase = req.body.keybase ? req.body.keybase : null;
+    const medium = req.body.medium ? req.body.medium : null;
     const reddit = req.body.reddit ? req.body.reddit : null;
+    const stackexchange = req.body.stackexchange
+      ? req.body.stackexchange
+      : null;
+    const steam = req.body.steam ? req.body.steam : null;
     const telegram = req.body.telegram ? req.body.telegram : null;
     const twitter = req.body.twitter ? req.body.twitter : null;
     const xda = req.body.xda ? req.body.xda : null;
@@ -78,7 +83,10 @@ function uiCommand() {
       facebook,
       instagram,
       keybase,
+      medium,
       reddit,
+      stackexchange,
+      steam,
       telegram,
       twitter,
       xda

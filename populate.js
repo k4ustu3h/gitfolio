@@ -40,7 +40,10 @@ module.exports.updateHTML = (username, opts) => {
     facebook,
     instagram,
     keybase,
+    medium,
     reddit,
+    stackexchange,
+    steam,
     telegram,
     twitter,
     xda
@@ -152,14 +155,13 @@ module.exports.updateHTML = (username, opts) => {
                 <div class="socials">
                 <span style="display:${
                   codepen == null ? "none !important" : "block"
-                };"><a href="https://codepen.io/${codepen}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-codepen"></span></a></span>
+                };"><a href="https://codepen.io/${codepen}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
                 <span style="display:${
                   dev == null ? "none !important" : "block"
                 };"><a href="https://dev.to/${dev}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-dev-to"></span></a></span>
                 <span style="display:${
                   dribbble == null ? "none !important" : "block"
                 };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-dribbble"></span></a></span>
-
                 <span style="display:${
                   facebook == null ? "none !important" : "block"
                 };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-facebook-box"></span></a></span>
@@ -168,12 +170,19 @@ module.exports.updateHTML = (username, opts) => {
                 };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-instagram"></span></a></span>
                 <span style="display:${
                   keybase == null ? "none !important" : "block"
-                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:keybase"></span>
-                    </a>
-                    </span>
+                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
+                <span style="display:${
+                  medium == null ? "none !important" : "block"
+                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:medium-m"></span></a></span>
                 <span style="display:${
                   reddit == null ? "none !important" : "block"
-                };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-reddit"></span></a></span>
+                };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials"><span class="iconify" data-icon="fa:reddit-alien"></span></a></span>
+                <span style="display:${
+                  stackexchange == null ? "none !important" : "block"
+                };"><a href="https://stackexchange.com/users/${stackexchange}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:stack-exchange"></span></a></span>
+                <span style="display:${
+                  steam == null ? "none !important" : "block"
+                };"><a href="https://steamcommunity.com/id/${steam}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:steam"></span></a></span>
                 <span style="display:${
                   telegram == null ? "none !important" : "block"
                 };"><a href="https://t.me/${telegram}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-telegram"></span></a></span>

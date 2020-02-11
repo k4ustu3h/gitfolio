@@ -86,7 +86,10 @@ async function buildCommand(username, program) {
     facebook: program.facebook,
     instagram: program.instagram,
     keybase: program.keybase,
+    medium: program.medium,
     reddit: program.reddit,
+    stackexchange: program.stackexchange,
+    steam: program.steam,
     telegram: program.telegram,
     twitter: program.twitter,
     xda: program.xda

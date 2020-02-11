@@ -23,7 +23,10 @@ async function updateCommand() {
     facebook: data[0].facebook,
     instagram: data[0].instagram,
     keybase: data[0].keybase,
+    medium: data[0].medium,
     reddit: data[0].reddit,
+    stackexchange: data[0].stackexchange,
+    steam: data[0].steam,
     telegram: data[0].telegram,
     twitter: data[0].twitter,
     xda: data[0].xda

@@ -26,6 +26,7 @@ program
   .option("-f, --fork", "includes forks with repos")
   .option("-s, --sort [sort]", "set default sort for repository", "created")
   .option("-o, --order [order]", "set default order on sort", "asc")
+
   .option("-c, --codepen [username]", "specify codepen username")
   .option("-d, --dev [username]", "specify dev username")
   .option("-D, --dribbble [username]", "specify dribbble username")
@@ -33,7 +34,10 @@ program
   .option("-F, --facebook [username]", "specify facebook username")
   .option("-i, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
+  .option("-m, --medium [username]", "specify medium username")
   .option("-r, --reddit [username]", "specify reddit username")
+  .option("-E, --stackexchange [user id]", "specify stackexchange user id")
+  .option("-S, --steam [username]", "specify steam username")
   .option("-T, --telegram [username]", "specify telegram username")
   .option("-w, --twitter [username]", "specify twitter username")
   .option("-x, --xda [user id]", "specify xda user id")
