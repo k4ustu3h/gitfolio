@@ -8,5 +8,5 @@
     ),
     url("{{{background}}}");
   --background-background: #fff;
-  --gradient: linear-gradient(90deg, #009bef, #ff0000);
+  --gradient: linear-gradient(90deg, #009bef, #f00);
 }

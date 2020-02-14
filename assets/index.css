@@ -47,7 +47,7 @@ body {
 }
 
 .footer {
-  padding: 8vh 0px;
+  padding: 8vh 0;
   text-align: center;
   width: 100%;
 }
@@ -76,9 +76,11 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -86,7 +88,7 @@ body {
 
 .profile div {
   font-weight: bold;
-  margin: 1.5vh 0px;
+  margin: 1.5vh 0;
 }
 
 .hidden {
@@ -97,6 +99,17 @@ body {
   color: white;
   font-family: "Asap Condensed", sans-serif;
   font-size: 18px;
+}
+
+.bottom_section span {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.socials span {
+  display: inline-block !important;
+  font-weight: normal !important;
+  margin-right: 2vw !important;
 }
 
 #username span {
@@ -122,6 +135,20 @@ body {
   font-size: 18px;
 }
 
+.projects a {
+  display: flex;
+  text-decoration: none;
+
+  /* 30px is the gutter size in magic grid */
+  width: calc(49% - 30px);
+
+  /* 49% avoids a weird single column on some wide screens */
+}
+
+.socials span a {
+  font-weight: normal !important;
+}
+
 #about a,
 #username a {
   color: #fff !important;
@@ -136,7 +163,11 @@ body {
 
 #about span {
   display: block;
-  margin: 1vh 0px;
+  margin: 1vh 0;
+}
+
+.bottom_section span i {
+  font-size: 15px;
 }
 
 #about span i {
@@ -144,35 +175,28 @@ body {
 }
 
 #work {
-  margin: 2vh 0px;
-  padding: 4vh 0px !important;
+  margin: 2vh 0;
+  padding: 4vh 0 !important;
 }
 
 #forks {
-  margin: 2vh 0px;
-  padding: 4vh 0px !important;
+  margin: 2vh 0;
+  padding: 4vh 0 !important;
 }
 
 .projects {
   margin-left: -15px;
-  /* align section w/ heading above */
-}
 
-.projects a {
-  display: flex;
-  text-decoration: none;
-  /* 30px is the gutter size in magic grid */
-  width: calc(49% - 30px);
-  /* 49% avoids a weird single column on some wide screens */
+  /* align section w/ heading above */
 }
 
 .projects section {
   border: 1px solid rgb(0, 0, 0, 0.08);
   border-radius: 5px;
-  box-shadow: 0px 0px 0px rgb(0, 0, 0, 0);
+  box-shadow: 0 0 0 rgb(0, 0, 0, 0);
   color: var(--text-color);
   display: inline-block;
-  margin: 1vh 0px;
+  margin: 1vh 0;
   padding: 2.5vh 5%;
   transform: scale(1);
   transition: 0.4s ease-in-out;
@@ -181,7 +205,7 @@ body {
 
 .projects section:hover {
   border: 1px solid rgb(0, 0, 0, 0);
-  box-shadow: 0px 15px 35px rgb(0, 0, 0, 0.06);
+  box-shadow: 0 15px 35px rgb(0, 0, 0, 0.06);
   cursor: pointer;
   transform: scale(1.03);
 }
@@ -189,8 +213,8 @@ body {
 .section_title {
   font-size: 24px;
   font-weight: bold;
-  margin: 1vh 0px;
-  padding: 0px 1px;
+  margin: 1vh 0;
+  padding: 0 1px;
   word-wrap: break-word;
 }
 
@@ -198,39 +222,20 @@ body {
   font-family: "Asap", sans-serif;
   font-size: 18px;
   font-weight: bold;
-  margin: 2vh 0px;
+  margin: 2vh 0;
   word-wrap: break-word;
 }
 
 .bottom_section {
   font-size: 14px;
-  margin: 1vh 0px;
+  margin: 1vh 0;
   word-wrap: break-word;
-}
-
-.bottom_section span {
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-.bottom_section span i {
-  font-size: 15px;
 }
 
 .socials {
   color: #fff;
-  margin: 3vh 0px !important;
+  margin: 3vh 0 !important;
   text-decoration: none;
-}
-
-.socials span {
-  display: inline-block !important;
-  font-weight: normal !important;
-  margin-right: 2vw !important;
-}
-
-.socials span a {
-  font-weight: normal !important;
 }
 
 ::selection {
@@ -261,7 +266,7 @@ body {
     background-size: 300% 300%;
     font-family: "Asap Condensed", sans-serif;
     font-size: 128px;
-    margin: 0px auto !important;
+    margin: 0 auto !important;
     transition: background 0.5s ease;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -271,20 +276,23 @@ body {
     0% {
       background-position: 0% 50%;
     }
+
     50% {
       background-position: 100% 50%;
     }
+
     100% {
       background-position: 0% 50%;
     }
   }
 
   #work {
-    margin: 0px;
+    margin: 0;
   }
 
   .projects {
     margin-left: 0;
+
     /* remove neg margin to align w/ header */
   }
 
