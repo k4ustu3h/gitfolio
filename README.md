@@ -1,9 +1,10 @@
-[![Build Status](https://img.shields.io/travis/k4ustu3h/gitfolio?style=for-the-badge)](https://travis-ci.org/k4ustu3h/gitfolio)
+[![Build Status](https://img.shields.io/travis/com/k4ustu3h/gitfolio?logo=travis&style=for-the-badge)](https://travis-ci.org/k4ustu3h/gitfolio)
+[![Codacy Badge](https://img.shields.io/codacy/grade/f5dd63eb7ece4716906a4aeeb9ea1b25?logo=codacy&style=for-the-badge)](https://www.codacy.com/manual/k4ustu3h/gitfolio)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 [![Dependency Status](https://img.shields.io/david/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio)
 [![devDependencies Status](https://img.shields.io/david/dev/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio?type=dev)
 [![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
-[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/k4ustu3h/gitfolio?style=for-the-badge)](https://snyk.io/test/github/k4ustu3h/gitfolio?targetFile=package.json)
+[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/k4ustu3h/gitfolio?logo=snyk&style=for-the-badge)](https://snyk.io/test/github/k4ustu3h/gitfolio?targetFile=package.json)
 
 # Gitfolio
 
@@ -118,12 +119,16 @@ gitfolio supports adding the follwing Social links
 -   Dev.to `-d, --dev <username>`
 -   Dribbble `-D, --dribbble <username>`
 -   Email `-e, --email <email>`
--   Facebook `-f, --facebook <username>`
+-   Facebook `-F, --facebook <username>`
 -   Instagram `-i, --instagram <username>`
 -   Keybase `-k, --keybase <username>`
+-   Medium `-m, --medium <username>`
 -   Reddit `-r, --reddit <username>`
+-   Stack Exchange `-E, --stackexchange <user id>`
+-   Steam `-S, --steam <username>`
 -   Telegram `-T, --telegram <username>`
 -   Twitter `-w, --twitter <username>`
+-   XDA Developers `-x, --xda <user id>`
 
 ```sh
 ➜  ~ gitfolio build <username> --twitter <twitter_username> --dribbble <dribbble_username>
