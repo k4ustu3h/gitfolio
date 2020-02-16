@@ -1,6 +1,7 @@
 [![Build Status](https://img.shields.io/travis/com/k4ustu3h/gitfolio?logo=travis&style=for-the-badge)](https://travis-ci.org/k4ustu3h/gitfolio)
 [![Codacy Badge](https://img.shields.io/codacy/grade/f5dd63eb7ece4716906a4aeeb9ea1b25?logo=codacy&style=for-the-badge)](https://www.codacy.com/manual/k4ustu3h/gitfolio)
-[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
+[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=for-the-badge)](https://github.com/prettier/prettier)
+[![Dependabot](https://img.shields.io/badge/dependabot-active-025E8C?logo=dependabot&style=for-the-badge)](https://dependabot.com/)
 [![Dependency Status](https://img.shields.io/david/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio)
 [![devDependencies Status](https://img.shields.io/david/dev/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio?type=dev)
 [![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
@@ -173,8 +174,7 @@ To Update background or theme you need to run `build` command again.
 
 ---
 
-[![JavaScript](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://github.com/topics/javascript)
-[![HTML](https://forthebadge.com/images/badges/uses-html.svg)](https://github.com/topics/html)
-[![CSS](https://forthebadge.com/images/badges/uses-css.svg)](https://github.com/topics/css)
-[![h9rbs.js](https://forthebadge.com/images/badges/uses-h9rbs.svg)](https://html9responsiveboilerstrapjs.com/)
-[![Electricity](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com)
+[![CSS](https://img.shields.io/badge/uses-css-1572B6?logo=css3&style=for-the-badge)](https://github.com/topics/css)
+[![h9rbs.js](https://img.shields.io/badge/uses-h9rbs.js-473349?style=for-the-badge)](https://html9responsiveboilerstrapjs.com/)
+[![HTML](https://img.shields.io/badge/uses-html-E34F26?logo=html5&style=for-the-badge)](https://github.com/topics/html)
+[![JavaScript](https://img.shields.io/badge/made_with-javascript-F7DF1E?logo=javascript&style=for-the-badge)](https://github.com/topics/javascript)
