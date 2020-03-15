@@ -27,7 +27,7 @@
       href="https://avatars1.githubusercontent.com/u/49553711?v=4"
       type="image/png"
     />
-    <meta name="description" content="null" />
+    <meta name="description" content="Just another copy-paster" />
     <meta
       property="og:image"
       content="https://avatars1.githubusercontent.com/u/49553711?v=4"
@@ -35,7 +35,7 @@
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="k4ustu3h" />
     <meta property="og:url" content="https://github.com/k4ustu3h" />
-    <meta property="og:description" content="null" />
+    <meta property="og:description" content="Just another copy-paster" />
     <meta property="profile:username" content="k4ustu3h" />
     <meta
       name="twitter:image:src"
@@ -43,7 +43,7 @@
     />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="k4ustu3h" />
-    <meta name="twitter:description" content="null" />
+    <meta name="twitter:description" content="Just another copy-paster" />
   </head>
 
   <body>
@@ -55,7 +55,6 @@
         <span id="text" style="display:block;"></span>
         <div class="console-underscore" id="console">_</div>
       </div>
-      <div id="userbio" style="display: none;">undefined</div>
       <div id="about">
         <span style="display:none;">
           <span class="iconify" data-icon="mdi-face"></span>
@@ -120,7 +119,7 @@
           </span>
           <span style="display:block;">
             <a
-              href="https://www.instagram.com/k4ustu3h_"
+              href="https://www.instagram.com/k4ustu3h"
               target="_blank"
               class="socials"
             >
@@ -285,8 +284,8 @@
               <div class="section_title">kotin.ga</div>
               <div class="about_section">
                 <span style="display:block;">
-                  🔗 Minimal URL - Modern URL shortener with support for custom
-                  alias &amp; can be hosted even in GitHub pages
+                  Kotinga - Modern URL shortener with support for custom alias
+                  &amp; can be hosted even in GitHub pages
                 </span>
               </div>
               <div class="bottom_section">
@@ -341,84 +340,89 @@
         </a>
       </div>
     </div>
-    <script>
-      const magicProjectsGrid = new MagicGrid({
-        container: "#work_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
+    <div id="script">
+      <script>
+        const magicProjectsGrid = new MagicGrid({
+          container: "#work_section",
+          animate: false,
+          gutter: 30, // default gutter size
+          static: true,
+          useMin: false,
+          maxColumns: 2,
+          useTransform: true
+        });
 
-      const magicForksGrid = new MagicGrid({
-        container: "#forks_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
+        const magicForksGrid = new MagicGrid({
+          container: "#forks_section",
+          animate: false,
+          gutter: 30, // default gutter size
+          static: true,
+          useMin: false,
+          maxColumns: 2,
+          useTransform: true
+        });
 
-      $("document").ready(() => {
-        magicProjectsGrid.listen();
-        magicForksGrid.listen();
-      });
+        $("document").ready(() => {
+          magicProjectsGrid.listen();
+          magicForksGrid.listen();
+        });
 
-      // function([string1, string2],target id,[color1,color2])
-      consoleText(["K4USTU3H", "Just another code copy-paster."], "text", [
-        "white",
-        "white"
-      ]);
+        // function([string1, string2],target id,[color1,color2])
+        consoleText(["Kaustubh Ladiya", "Just another copy-paster"], "text", [
+          "white",
+          "white"
+        ]);
 
-      function consoleText(words, id, colors) {
-        if (colors === undefined) colors = ["#fff"];
-        var visible = true;
-        var con = document.getElementById("console");
-        var letterCount = 1;
-        var x = 1;
-        var waiting = false;
-        var target = document.getElementById(id);
-        target.setAttribute("style", "color:" + colors[0]);
-        window.setInterval(function() {
-          if (letterCount === 0 && waiting === false) {
-            waiting = true;
-            target.innerHTML = words[0].substring(0, letterCount);
-            window.setTimeout(function() {
-              var usedColor = colors.shift();
-              colors.push(usedColor);
-              var usedWord = words.shift();
-              words.push(usedWord);
-              x = 1;
-              target.setAttribute("style", "color:" + colors[0]);
+        function consoleText(words, id, colors) {
+          if (colors === undefined) colors = ["#fff"];
+          var visible = true;
+          var con = document.getElementById("console");
+          var letterCount = 1;
+          var x = 1;
+          var waiting = false;
+          var target = document.getElementById(id);
+          target.setAttribute("style", "color:" + colors[0]);
+          window.setInterval(function() {
+            if (letterCount === 0 && waiting === false) {
+              waiting = true;
+              target.innerHTML = words[0].substring(0, letterCount);
+              window.setTimeout(function() {
+                var usedColor = colors.shift();
+                colors.push(usedColor);
+                var usedWord = words.shift();
+                words.push(usedWord);
+                x = 1;
+                target.setAttribute("style", "color:" + colors[0]);
+                letterCount += x;
+                waiting = false;
+              }, 1000);
+            } else if (
+              letterCount === words[0].length + 1 &&
+              waiting === false
+            ) {
+              waiting = true;
+              window.setTimeout(function() {
+                x = -1;
+                letterCount += x;
+                waiting = false;
+              }, 1000);
+            } else if (waiting === false) {
+              target.innerHTML = words[0].substring(0, letterCount);
               letterCount += x;
-              waiting = false;
-            }, 1000);
-          } else if (letterCount === words[0].length + 1 && waiting === false) {
-            waiting = true;
-            window.setTimeout(function() {
-              x = -1;
-              letterCount += x;
-              waiting = false;
-            }, 1000);
-          } else if (waiting === false) {
-            target.innerHTML = words[0].substring(0, letterCount);
-            letterCount += x;
-          }
-        }, 120);
-        window.setInterval(function() {
-          if (visible === true) {
-            con.className = "console-underscore hidden";
-            visible = false;
-          } else {
-            con.className = "console-underscore";
+            }
+          }, 120);
+          window.setInterval(function() {
+            if (visible === true) {
+              con.className = "console-underscore hidden";
+              visible = false;
+            } else {
+              con.className = "console-underscore";
 
-            visible = true;
-          }
-        }, 400);
-      }
-    </script>
+              visible = true;
+            }
+          }, 400);
+        }
+      </script>
+    </div>
   </body>
 </html>
