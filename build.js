@@ -5,11 +5,14 @@ const bluebird = require("bluebird");
 const hbs = require("handlebars");
 //  Creates promise-returning async functions from callback-passed async functions
 const fs = bluebird.promisifyAll(require("fs"));
+const fse = require("fs-extra");
 const { updateHTML } = require("./populate");
 const { getConfig, outDir } = require("./utils");
 
 const assetDir = path.resolve(`${__dirname}/assets/`);
 const config = path.join(outDir, "config.json");
+const tempfont = path.resolve(assetDir, "fonts");
+const fonts = path.join(outDir, "assets/fonts");
 
 /**
  * Creates the stylesheet used by the site from a template stylesheet.
@@ -19,7 +22,7 @@ const config = path.join(outDir, "config.json");
  */
 async function populateCSS({
   theme = "light",
-  background = "https://source.unsplash.com/1280x720/?wallpaper"
+  background = "https://source.unsplash.com/1280x720/?wallpaper",
 } = {}) {
   // Get the theme the user requests. Defaults to 'light'
   theme = `${theme}.css`;
@@ -35,6 +38,9 @@ async function populateCSS({
   // Copy over the template CSS stylesheet
   await fs.copyFileAsync(template, stylesheet);
 
+  // Copy Fonts
+  fse.copySync(tempfont, fonts);
+
   // Get an array of every available theme
   const themes = await fs.readdirAsync(path.join(assetDir, "themes"));
 
@@ -48,7 +54,7 @@ async function populateCSS({
   themeSource = themeSource.toString("utf-8");
   const themeTemplate = hbs.compile(themeSource);
   const styles = themeTemplate({
-    background: `${background}`
+    background: `${background}`,
   });
   // Add the user-specified styles to the new stylesheet
   await fs.appendFileAsync(stylesheet, styles);
@@ -92,7 +98,7 @@ async function buildCommand(username, program) {
     steam: program.steam,
     telegram: program.telegram,
     twitter: program.twitter,
-    xda: program.xda
+    xda: program.xda,
   };
 
   await populateConfig(opts);
@@ -102,5 +108,5 @@ async function buildCommand(username, program) {
 module.exports = {
   buildCommand,
   populateCSS,
-  populateConfig
+  populateConfig,
 };
