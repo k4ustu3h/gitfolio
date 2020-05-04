@@ -41,7 +41,7 @@
     "express": "^4.17.0",
     "fs-extra": "9.0.0",
     "github-emoji": "^1.1.1",
-    "got": "11.0.2",
+    "got": "11.1.0",
     "handlebars": "4.7.6",
     "jsdom": "16.2.2",
     "ncp": "^2.0.0",
