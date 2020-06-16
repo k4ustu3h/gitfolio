@@ -2,7 +2,7 @@ const fs = require("fs");
 const emoji = require("github-emoji");
 const jsdom = require("jsdom").JSDOM,
   options = {
-    resources: "usable"
+    resources: "usable",
   };
 const { getConfig, outDir } = require("./utils");
 const { getRepos, getUser } = require("./api");
@@ -13,7 +13,7 @@ function convertToEmoji(text) {
   var pattern = /(?<=:\s*).*?(?=\s*:)/gs;
   if (text.match(pattern) != null) {
     var str = text.match(pattern);
-    str = str.filter(function(arr) {
+    str = str.filter(function (arr) {
       return /\S/.test(arr);
     });
     for (i = 0; i < str.length; i++) {
@@ -46,12 +46,12 @@ module.exports.updateHTML = (username, opts) => {
     steam,
     telegram,
     twitter,
-    xda
+    xda,
   } = opts;
   //add data to assets/index.html
   jsdom
     .fromFile(`${__dirname}/assets/index.html`, options)
-    .then(function(dom) {
+    .then(function (dom) {
       let window = dom.window,
         document = window.document;
       (async () => {
@@ -160,16 +160,16 @@ module.exports.updateHTML = (username, opts) => {
                 };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-dribbble"></span></a></span>
                 <span style="display:${
                   facebook == null ? "none !important" : "block"
-                };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-facebook-box"></span></a></span>
+                };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:facebook"></span></a></span>
                 <span style="display:${
                   instagram == null ? "none !important" : "block"
                 };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-instagram"></span></a></span>
                 <span style="display:${
                   keybase == null ? "none !important" : "block"
-                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
+                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:keybase"></span></a></span>
                 <span style="display:${
                   medium == null ? "none !important" : "block"
-                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:medium-m"></span></a></span>
+                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials"><span class="iconify" data-icon="ant-design:medium-circle-filled"></span></a></span>
                 <span style="display:${
                   reddit == null ? "none !important" : "block"
                 };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials"><span class="iconify" data-icon="fa:reddit-alien"></span></a></span>
@@ -279,7 +279,7 @@ module.exports.updateHTML = (username, opts) => {
           await fs.writeFile(
             `${outDir}/config.json`,
             JSON.stringify(data, null, " "),
-            function(err) {
+            function (err) {
               if (err) throw err;
               console.log("Config file updated.");
             }
@@ -287,7 +287,7 @@ module.exports.updateHTML = (username, opts) => {
           await fs.writeFile(
             `${outDir}/index.html`,
             "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
-            function(error) {
+            function (error) {
               if (error) throw error;
               console.log(`Build Complete, Files can be Found @ ${outDir}\n`);
             }
@@ -297,7 +297,7 @@ module.exports.updateHTML = (username, opts) => {
         }
       })();
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
     });
 };

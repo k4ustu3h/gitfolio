@@ -5,14 +5,11 @@ const bluebird = require("bluebird");
 const hbs = require("handlebars");
 //  Creates promise-returning async functions from callback-passed async functions
 const fs = bluebird.promisifyAll(require("fs"));
-const fse = require("fs-extra");
 const { updateHTML } = require("./populate");
 const { getConfig, outDir } = require("./utils");
 
 const assetDir = path.resolve(`${__dirname}/assets/`);
 const config = path.join(outDir, "config.json");
-const tempfont = path.resolve(assetDir, "fonts");
-const fonts = path.join(outDir, "assets/fonts");
 
 /**
  * Creates the stylesheet used by the site from a template stylesheet.
@@ -37,9 +34,6 @@ async function populateCSS({
 
   // Copy over the template CSS stylesheet
   await fs.copyFileAsync(template, stylesheet);
-
-  // Copy Fonts
-  fse.copySync(tempfont, fonts);
 
   // Get an array of every available theme
   const themes = await fs.readdirAsync(path.join(assetDir, "themes"));
