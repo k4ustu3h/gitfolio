@@ -44,7 +44,7 @@
     "handlebars": "4.7.6",
     "jsdom": "16.2.2",
     "ncp": "^2.0.0",
-    "snyk": "1.341.1"
+    "snyk": "1.342.1"
   },
   "devDependencies": {
     "eslint": "7.2.0",
