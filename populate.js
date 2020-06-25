@@ -85,13 +85,13 @@ module.exports.updateHTML = (username, opts) => {
                                   repos[i].language == null
                                     ? "none"
                                     : "inline-block"
-                                };"><span class="iconify" data-icon="mdi-code-tags"></span>&nbsp; ${
+                                };"><span class="iconify" data-icon="mdi:code-tags"></span>&nbsp; ${
               repos[i].language
             }</span>
-                                <span><span class="iconify" data-icon="mdi-star"></span>&nbsp; ${
+                                <span><span class="iconify" data-icon="ic:round-star-outline"></span>&nbsp; ${
                                   repos[i].stargazers_count
                                 }</span>
-                                <span><span class="iconify" data-icon="mdi-source-fork"></span>&nbsp; ${
+                                <span><span class="iconify" data-icon="mdi:source-fork"></span>&nbsp; ${
                                   repos[i].forks_count
                                 }</span>
                             </div>
@@ -127,67 +127,67 @@ module.exports.updateHTML = (username, opts) => {
           document.getElementById("about").innerHTML = `
                 <span style="display:${
                   user.company == null || !user.company ? "none" : "block"
-                };"><span class="iconify" data-icon="mdi-face"></span> &nbsp; ${
+                };"><span class="iconify" data-icon="mdi:face"></span> &nbsp; ${
             user.company
           }</span>
                 <span style="display:block;"><a href="${
                   user.html_url
-                }"><span class="iconify" data-icon="mdi-github-circle"></span>&nbsp;&nbsp;@${
+                }"><span class="iconify" data-icon="simple-icons:github"></span>&nbsp;&nbsp;@${
             user.login
           }</a></span>
                 <span style="display:${
                   email == null ? "none !important" : "block"
-                };"><a href="mailto:${email}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-email"></span>&nbsp;&nbsp;${email}</a></span>
+                };"><a href="mailto:${email}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:email-outline"></span>&nbsp;&nbsp;${email}</a></span>
                 <span style="display:${
                   user.location == null || !user.location ? "none" : "block"
                 };"><a href="https://www.google.com/maps/search/?api=1&query=${
             user.location
-          }"><span class="iconify" data-icon="mdi-map-marker"></span>&nbsp;&nbsp;${
+          }"><span class="iconify" data-icon="mdi:map-marker-outline"></span>&nbsp;&nbsp;${
             user.location
           }</a></span>
                 <span style="display:${
                   user.hireable == false || !user.hireable ? "none" : "block"
-                };"><span class="iconify" data-icon="mdi-account-tie"></span> &nbsp;&nbsp; Available for hire</span>
+                };"><span class="iconify" data-icon="mdi:account-tie-outline"></span> &nbsp;&nbsp; Available for hire</span>
                 <div class="socials">
                 <span style="display:${
                   codepen == null ? "none !important" : "block"
                 };"><a href="https://codepen.io/${codepen}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
                 <span style="display:${
                   dev == null ? "none !important" : "block"
-                };"><a href="https://dev.to/${dev}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-dev-to"></span></a></span>
+                };"><a href="https://dev.to/${dev}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:dev"></span></a></span>
                 <span style="display:${
                   dribbble == null ? "none !important" : "block"
-                };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-dribbble"></span></a></span>
+                };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
                 <span style="display:${
                   facebook == null ? "none !important" : "block"
-                };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:facebook"></span></a></span>
+                };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
                 <span style="display:${
                   instagram == null ? "none !important" : "block"
-                };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-instagram"></span></a></span>
+                };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
                 <span style="display:${
                   keybase == null ? "none !important" : "block"
-                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:keybase"></span></a></span>
+                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
                 <span style="display:${
                   medium == null ? "none !important" : "block"
-                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials"><span class="iconify" data-icon="ant-design:medium-circle-filled"></span></a></span>
+                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials"><span class="iconify" data-icon="ant-design:medium-circle-filled" data-width="24" data-height="24"></span></a></span>
                 <span style="display:${
                   reddit == null ? "none !important" : "block"
-                };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials"><span class="iconify" data-icon="fa:reddit-alien"></span></a></span>
+                };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
                 <span style="display:${
                   stackexchange == null ? "none !important" : "block"
-                };"><a href="https://stackexchange.com/users/${stackexchange}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:stack-exchange"></span></a></span>
+                };"><a href="https://stackexchange.com/users/${stackexchange}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:stack-exchange"></span></a></span>
                 <span style="display:${
                   steam == null ? "none !important" : "block"
-                };"><a href="https://steamcommunity.com/id/${steam}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:steam"></span></a></span>
+                };"><a href="https://steamcommunity.com/id/${steam}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
                 <span style="display:${
                   telegram == null ? "none !important" : "block"
-                };"><a href="https://t.me/${telegram}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-telegram"></span></a></span>
+                };"><a href="https://t.me/${telegram}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:telegram"></span></a></span>
                 <span style="display:${
                   twitter == null ? "none !important" : "block"
-                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-twitter"></span></a></span>
+                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><span class="iconify" data-icon="ant-design:twitter-circle-filled" data-width="24" data-height="24"></span></a></span>
                 <span style="display:${
                   xda == null ? "none !important" : "block"
-                };"><a href="https://forum.xda-developers.com/member.php?u=${xda}" target="_blank" class="socials"><span class="iconify" data-icon="mdi-xda"></span></a></span>
+                };"><a href="https://forum.xda-developers.com/member.php?u=${xda}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
                 </div>
                 `;
           //Script

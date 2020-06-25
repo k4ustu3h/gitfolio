@@ -14,7 +14,7 @@
     ),
     url("{{{background}}}") center center fixed;
   --height: 50vh;
-  --gradient: linear-gradient(90deg, #009bef, #f00);
+  --gradient: linear-gradient(90deg, #009bef, #c471ed, #b31818);
 }
 
 #display h1 {
