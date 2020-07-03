@@ -63,5 +63,5 @@ async function getUser(username) {
 
 module.exports = {
   getRepos,
-  getUser
+  getUser,
 };

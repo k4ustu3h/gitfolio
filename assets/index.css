@@ -14,7 +14,7 @@ body {
   width: 100vw;
 }
 
-.profile {
+#profile {
   background: var(--background-image) center center;
   background-repeat: no-repeat;
   background-size: cover !important;
@@ -27,6 +27,45 @@ body {
   position: fixed;
   text-align: left;
   width: 24vw;
+}
+
+#image {
+  width: 180px;
+  height: 180px;
+  min-width: 180px;
+  min-height: 180px;
+  max-width: 180px;
+  max-height: 180px;
+  border-radius: 5px;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+#initials {
+  animation: grad 8s ease infinite;
+  background: var(--gradient);
+  background-size: 300% 300%;
+  font-family: "Asap Condensed", sans-serif;
+  font-size: 128px;
+  height: 180px;
+  transition: background 0.5s ease;
+  width: 180px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes grad {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .display {
@@ -65,34 +104,7 @@ body {
   text-decoration: none;
 }
 
-.profile_img {
-  animation: grad 8s ease infinite;
-  background: var(--gradient);
-  background-size: 300% 300%;
-  font-family: "Asap Condensed", sans-serif;
-  font-size: 128px;
-  height: 180px;
-  transition: background 0.5s ease;
-  width: 180px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes grad {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.profile div {
+#profile div {
   font-weight: bold;
   margin: 1.5vh 0;
 }
@@ -250,7 +262,7 @@ body {
 }
 
 @media (max-width: 800px) {
-  .profile {
+  #profile {
     height: 60vh;
     padding: 4vh 5vw;
     position: relative;
@@ -258,15 +270,17 @@ body {
     width: 90vw;
   }
 
-  .display {
-    display: inline-block;
-    height: auto;
-    padding: 4vh 5vw;
-    padding-left: 5vw;
-    width: 90vw;
+  #image {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    margin: 0 auto !important;
   }
 
-  .profile_img {
+  #initials {
     animation: grad 8s ease infinite;
     background: var(--gradient);
     background-size: 300% 300%;
@@ -290,6 +304,14 @@ body {
     100% {
       background-position: 0% 50%;
     }
+  }
+
+  .display {
+    display: inline-block;
+    height: auto;
+    padding: 4vh 5vw;
+    padding-left: 5vw;
+    width: 90vw;
   }
 
   #work {

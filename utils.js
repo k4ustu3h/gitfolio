@@ -29,5 +29,5 @@ async function getConfig() {
 
 module.exports = {
   outDir,
-  getConfig
+  getConfig,
 };

@@ -21,18 +21,19 @@ program
   .description(
     "Build site with your GitHub username. This will be used to customize your site"
   )
-  .option("-t, --theme [theme]", "specify a theme to use", "light")
   .option("-b, --background [background]", "set the background image")
   .option("-f, --fork", "includes forks with repos")
-  .option("-s, --sort [sort]", "set default sort for repository", "created")
   .option("-o, --order [order]", "set default order on sort", "asc")
+  .option("-s, --sort [sort]", "set default sort for repository", "created")
+  .option("-t, --theme [theme]", "specify a theme to use", "light")
 
   .option("-c, --codepen [username]", "specify codepen username")
   .option("-d, --dev [username]", "specify dev username")
   .option("-D, --dribbble [username]", "specify dribbble username")
   .option("-e, --email [email]", "specify email")
   .option("-F, --facebook [username]", "specify facebook username")
-  .option("-i, --instagram [username]", "specify instagram username")
+  .option("-i, --initials [initials]", "specify your initials")
+  .option("-I, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
   .option("-m, --medium [username]", "specify medium username")
   .option("-r, --reddit [username]", "specify reddit username")

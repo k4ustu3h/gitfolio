@@ -21,6 +21,7 @@ async function updateCommand() {
     dribbble: data[0].dribbble,
     email: data[0].email,
     facebook: data[0].facebook,
+    initials: data[0].initials,
     instagram: data[0].instagram,
     keybase: data[0].keybase,
     medium: data[0].medium,
@@ -29,11 +30,11 @@ async function updateCommand() {
     steam: data[0].steam,
     telegram: data[0].telegram,
     twitter: data[0].twitter,
-    xda: data[0].xda
+    xda: data[0].xda,
   };
   updateHTML(username, opts);
 }
 
 module.exports = {
-  updateCommand
+  updateCommand,
 };

@@ -1,7 +1,6 @@
 [![Build Status](https://img.shields.io/travis/com/k4ustu3h/gitfolio?logo=travis&style=for-the-badge)](https://travis-ci.org/k4ustu3h/gitfolio)
 [![Codacy Badge](https://img.shields.io/codacy/grade/f5dd63eb7ece4716906a4aeeb9ea1b25?logo=codacy&style=for-the-badge)](https://www.codacy.com/manual/k4ustu3h/gitfolio)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=for-the-badge)](https://github.com/prettier/prettier)
-[![Dependabot](https://img.shields.io/badge/dependabot-active-025E8C?logo=dependabot&style=for-the-badge)](https://dependabot.com/)
 [![Dependency Status](https://img.shields.io/david/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio)
 [![devDependencies Status](https://img.shields.io/david/dev/k4ustu3h/gitfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/gitfolio?type=dev)
 [![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
@@ -41,7 +40,7 @@ Using the UI
 ➜  ~ gitfolio ui
 ```
 
-> Tip: You can use ui to create new blogs and for updating your folio too.
+> Tip: You can use ui for updating your gitfolio too.
 
 or
 
@@ -104,7 +103,7 @@ For example, the following command will build the website with the dark theme
 
 #### Customize background image
 
-To customize the background image just provide `--background [url]` argument while building
+To customize the background image just provide `--background [url]` argument while building.
 
 ```sh
 ➜  ~ gitfolio build <username> --background https://images.unsplash.com/photo-1557277770-baf0ca74f908?w=1634
@@ -112,16 +111,24 @@ To customize the background image just provide `--background [url]` argument whi
 
 You could also add in your custom CSS inside `index.css` to give it a more personal feel.
 
+#### Customize profile picture
+
+You can either use your GitHub profile picture or you can add your initials in an animated gradient. Just provide `-i` or `--initials` argument while building.
+
+```sh
+➜  ~ gitfolio build <username> --initials K_
+```
+
 #### Add Social Media links on your profile
 
-gitfolio supports adding the follwing Social links
+gitfolio supports adding the following Social links
 
 -   Codepen `-c, --codepen <username>`
 -   Dev.to `-d, --dev <username>`
 -   Dribbble `-D, --dribbble <username>`
 -   Email `-e, --email <email>`
 -   Facebook `-F, --facebook <username>`
--   Instagram `-i, --instagram <username>`
+-   Instagram `-I, --instagram <username>`
 -   Keybase `-k, --keybase <username>`
 -   Medium `-m, --medium <username>`
 -   Reddit `-r, --reddit <username>`

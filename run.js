@@ -18,5 +18,5 @@ function runCommand(program) {
 }
 
 module.exports = {
-  runCommand
+  runCommand,
 };

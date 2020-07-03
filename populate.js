@@ -38,6 +38,7 @@ module.exports.updateHTML = (username, opts) => {
     dribbble,
     email,
     facebook,
+    initials,
     instagram,
     keybase,
     medium,
@@ -70,7 +71,9 @@ module.exports.updateHTML = (username, opts) => {
               continue;
             }
             element.innerHTML += `
-                        <a href="${repos[i].html_url}" target="_blank">
+                        <a href="${
+                          repos[i].html_url
+                        }" target="_blank" rel="noopener">
                         <section>
                             <div class="section_title">${repos[i].name}</div>
                             <div class="about_section">
@@ -118,12 +121,26 @@ module.exports.updateHTML = (username, opts) => {
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content="${user.login}" />
           <meta name="twitter:description" content="${user.bio}" />`;
-          //Socials
+
+          // Decides if initials or profile picture is used
+          if (initials == null) {
+            document.getElementById("initials").id = `image`;
+            document.getElementById(
+              "image"
+            ).style.background = `url('${user.avatar_url}') center center`;
+          } else {
+            document.getElementById(
+              "initials"
+            ).innerHTML = `<span>${initials}</span>`;
+          }
+
           document.getElementById(
             "username"
           ).innerHTML = `<span id="text" style="display:${
             user.name == null || !user.name ? "none" : "block"
           };"></span><div class='console-underscore' id='console'>&#95;</div>`;
+
+          // Social Media links and other info about the user
           document.getElementById("about").innerHTML = `
                 <span style="display:${
                   user.company == null || !user.company ? "none" : "block"
@@ -137,7 +154,7 @@ module.exports.updateHTML = (username, opts) => {
           }</a></span>
                 <span style="display:${
                   email == null ? "none !important" : "block"
-                };"><a href="mailto:${email}" target="_blank" class="socials"><span class="iconify" data-icon="mdi:email-outline"></span>&nbsp;&nbsp;${email}</a></span>
+                };"><a href="mailto:${email}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="mdi:email-outline"></span>&nbsp;&nbsp;${email}</a></span>
                 <span style="display:${
                   user.location == null || !user.location ? "none" : "block"
                 };"><a href="https://www.google.com/maps/search/?api=1&query=${
@@ -147,50 +164,51 @@ module.exports.updateHTML = (username, opts) => {
           }</a></span>
                 <span style="display:${
                   user.hireable == false || !user.hireable ? "none" : "block"
-                };"><span class="iconify" data-icon="mdi:account-tie-outline"></span> &nbsp;&nbsp; Available for hire</span>
+                };"><span class="iconify" data-icon="mdi:account-tie-outline"></span>&nbsp;&nbsp;Available for hire</span>
                 <div class="socials">
                 <span style="display:${
                   codepen == null ? "none !important" : "block"
-                };"><a href="https://codepen.io/${codepen}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
+                };"><a href="https://codepen.io/${codepen}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
                 <span style="display:${
                   dev == null ? "none !important" : "block"
-                };"><a href="https://dev.to/${dev}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:dev"></span></a></span>
+                };"><a href="https://dev.to/${dev}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:dev"></span></a></span>
                 <span style="display:${
                   dribbble == null ? "none !important" : "block"
-                };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
+                };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
                 <span style="display:${
                   facebook == null ? "none !important" : "block"
-                };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
+                };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
                 <span style="display:${
                   instagram == null ? "none !important" : "block"
-                };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
+                };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
                 <span style="display:${
                   keybase == null ? "none !important" : "block"
-                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
+                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
                 <span style="display:${
                   medium == null ? "none !important" : "block"
-                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials"><span class="iconify" data-icon="ant-design:medium-circle-filled" data-width="24" data-height="24"></span></a></span>
+                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:medium-circle-filled" data-width="24" data-height="24"></span></a></span>
                 <span style="display:${
                   reddit == null ? "none !important" : "block"
-                };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
+                };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
                 <span style="display:${
                   stackexchange == null ? "none !important" : "block"
-                };"><a href="https://stackexchange.com/users/${stackexchange}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:stack-exchange"></span></a></span>
+                };"><a href="https://stackexchange.com/users/${stackexchange}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:stack-exchange"></span></a></span>
                 <span style="display:${
                   steam == null ? "none !important" : "block"
-                };"><a href="https://steamcommunity.com/id/${steam}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
+                };"><a href="https://steamcommunity.com/id/${steam}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
                 <span style="display:${
                   telegram == null ? "none !important" : "block"
-                };"><a href="https://t.me/${telegram}" target="_blank" class="socials"><span class="iconify" data-icon="fa-brands:telegram"></span></a></span>
+                };"><a href="https://t.me/${telegram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:telegram"></span></a></span>
                 <span style="display:${
                   twitter == null ? "none !important" : "block"
-                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials"><span class="iconify" data-icon="ant-design:twitter-circle-filled" data-width="24" data-height="24"></span></a></span>
+                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:twitter-circle-filled" data-width="24" data-height="24"></span></a></span>
                 <span style="display:${
                   xda == null ? "none !important" : "block"
-                };"><a href="https://forum.xda-developers.com/member.php?u=${xda}" target="_blank" class="socials"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
+                };"><a href="https://forum.xda-developers.com/member.php?u=${xda}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
                 </div>
                 `;
-          //Script
+
+          //Magic Grid
           document.getElementById("script").innerHTML = `<script>
             const magicProjectsGrid = new MagicGrid({
               container: "#work_section",
@@ -217,7 +235,7 @@ module.exports.updateHTML = (username, opts) => {
               magicForksGrid.listen();
             });
 
-            // function([string1, string2],target id,[color1,color2])
+            // Typewriter
             consoleText(["${user.name}", "${user.bio}"], "text", [
               "white",
               "white"
@@ -270,6 +288,7 @@ module.exports.updateHTML = (username, opts) => {
               }, 400);
             }
           </script>`;
+
           //add data to config.json
           const data = await getConfig();
           data[0].username = user.login;

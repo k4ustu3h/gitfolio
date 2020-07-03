@@ -10,13 +10,13 @@ app.use(express.static(__dirname + "/views"));
 app.set("views", __dirname + "/views");
 app.use(
   express.json({
-    limit: "50mb"
+    limit: "50mb",
   })
 );
 app.use(
   express.urlencoded({
     limit: "50mb",
-    extended: true
+    extended: true,
   })
 );
 
@@ -56,6 +56,7 @@ function uiCommand() {
     const dribbble = req.body.dribbble ? req.body.dribbble : null;
     const email = req.body.email ? req.body.email : null;
     const facebook = req.body.facebook ? req.body.facebook : null;
+    const initials = req.body.initials ? req.body.initials : null;
     const instagram = req.body.instagram ? req.body.instagram : null;
     const keybase = req.body.keybase ? req.body.keybase : null;
     const medium = req.body.medium ? req.body.medium : null;
@@ -81,6 +82,7 @@ function uiCommand() {
       dribbble,
       email,
       facebook,
+      initials,
       instagram,
       keybase,
       medium,
@@ -89,13 +91,13 @@ function uiCommand() {
       steam,
       telegram,
       twitter,
-      xda
+      xda,
     };
 
     updateHTML(username, opts);
     populateCSS({
       background,
-      theme
+      theme,
     });
     populateConfig(opts);
     res.redirect("/");
@@ -109,5 +111,5 @@ function uiCommand() {
 }
 
 module.exports = {
-  uiCommand
+  uiCommand,
 };
