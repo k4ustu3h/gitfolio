@@ -27,6 +27,11 @@ body {
   position: fixed;
   text-align: left;
   width: 24vw;
+  overflow-y: scroll;
+}
+
+#profile::-webkit-scrollbar {
+  display: none;
 }
 
 #image {
@@ -113,12 +118,6 @@ body {
   opacity: 0;
 }
 
-#username {
-  color: white;
-  font-family: "Asap Condensed", sans-serif;
-  font-size: 18px;
-}
-
 .bottom_section span {
   font-weight: bold;
   margin-right: 20px;
@@ -130,21 +129,15 @@ body {
   margin-right: 2vw !important;
 }
 
-#username span {
+#username {
+  color: white;
   font-family: "Asap Condensed", sans-serif;
-  font-size: 24px;
-}
-
-.console-underscore {
-  display: inline-block;
-  left: 10px;
-  position: relative;
-  top: -0.14em;
+  font-size: 22px;
 }
 
 #userbio {
   font-family: "Asap", sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   width: 100%;
 }
 
@@ -167,15 +160,13 @@ body {
   font-weight: normal !important;
 }
 
-#about a,
-#username a {
+#about a {
   color: #fff !important;
   font-weight: bold;
   text-decoration: none;
 }
 
-#about a:hover,
-#username a:hover {
+#about a:hover {
   text-decoration: underline;
 }
 
