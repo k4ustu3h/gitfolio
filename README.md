@@ -128,6 +128,7 @@ gitfolio supports adding the following Social links
 -   Dribbble `-D, --dribbble <username>`
 -   Email `-e, --email <email>`
 -   Facebook `-F, --facebook <username>`
+-   Gravatar `-g, --gravatar <username>`
 -   Instagram `-I, --instagram <username>`
 -   Keybase `-k, --keybase <username>`
 -   Medium `-m, --medium <username>`
@@ -137,6 +138,7 @@ gitfolio supports adding the following Social links
 -   Telegram `-T, --telegram <username>`
 -   Twitter `-w, --twitter <username>`
 -   XDA Developers `-x, --xda <user id>`
+-   YouTube `-y, --youtube <channel id>`
 
 ```sh
 ➜  ~ gitfolio build <username> --twitter <twitter_username> --dribbble <dribbble_username>

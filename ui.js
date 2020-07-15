@@ -56,6 +56,7 @@ function uiCommand() {
     const dribbble = req.body.dribbble ? req.body.dribbble : null;
     const email = req.body.email ? req.body.email : null;
     const facebook = req.body.facebook ? req.body.facebook : null;
+    const gravatar = req.body.gravatar ? req.body.gravatar : null;
     const initials = req.body.initials ? req.body.initials : null;
     const instagram = req.body.instagram ? req.body.instagram : null;
     const keybase = req.body.keybase ? req.body.keybase : null;
@@ -68,6 +69,7 @@ function uiCommand() {
     const telegram = req.body.telegram ? req.body.telegram : null;
     const twitter = req.body.twitter ? req.body.twitter : null;
     const xda = req.body.xda ? req.body.xda : null;
+    const youtube = req.body.youtube ? req.body.youtube : null;
     const background = req.body.background
       ? req.body.background
       : "https://source.unsplash.com/1280x720/?wallpaper";
@@ -82,6 +84,7 @@ function uiCommand() {
       dribbble,
       email,
       facebook,
+      gravatar,
       initials,
       instagram,
       keybase,
@@ -92,6 +95,7 @@ function uiCommand() {
       telegram,
       twitter,
       xda,
+      youtube,
     };
 
     updateHTML(username, opts);

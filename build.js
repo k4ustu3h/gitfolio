@@ -84,6 +84,7 @@ async function buildCommand(username, program) {
     dribbble: program.dribbble,
     email: program.email,
     facebook: program.facebook,
+    gravatar: program.gravatar,
     initials: program.initials,
     instagram: program.instagram,
     keybase: program.keybase,
@@ -94,6 +95,7 @@ async function buildCommand(username, program) {
     telegram: program.telegram,
     twitter: program.twitter,
     xda: program.xda,
+    youtube: program.youtube,
   };
 
   await populateConfig(opts);

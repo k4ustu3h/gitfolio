@@ -32,6 +32,7 @@ program
   .option("-D, --dribbble [username]", "specify dribbble username")
   .option("-e, --email [email]", "specify email")
   .option("-F, --facebook [username]", "specify facebook username")
+  .option("-g, --gravatar [username]", "specify gravatar/wordpress username")
   .option("-i, --initials [initials]", "specify your initials")
   .option("-I, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
@@ -42,6 +43,7 @@ program
   .option("-T, --telegram [username]", "specify telegram username")
   .option("-w, --twitter [username]", "specify twitter username")
   .option("-x, --xda [user id]", "specify xda user id")
+  .option("-y, --youtube [channel id]", "specify youtube channel id")
   .action(buildCommand);
 
 program

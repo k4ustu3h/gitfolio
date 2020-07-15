@@ -38,6 +38,7 @@ module.exports.updateHTML = (username, opts) => {
     dribbble,
     email,
     facebook,
+    gravatar,
     initials,
     instagram,
     keybase,
@@ -48,6 +49,7 @@ module.exports.updateHTML = (username, opts) => {
     telegram,
     twitter,
     xda,
+    youtube,
   } = opts;
   //add data to assets/index.html
   jsdom
@@ -136,15 +138,21 @@ module.exports.updateHTML = (username, opts) => {
 
           document.getElementById(
             "username"
-          ).innerHTML = `<span id="text" style="display:${
+          ).innerHTML = `<span style="display:${
             user.name == null || !user.name ? "none" : "block"
-          };"></span><div class='console-underscore' id='console'>&#95;</div>`;
+          };">${user.name}</span>`;
+
+          document.getElementById("userbio").innerHTML = convertToEmoji(
+            user.bio
+          );
+          document.getElementById("userbio").style.display =
+            user.bio == null || !user.bio ? "none" : "block";
 
           // Social Media links and other info about the user
           document.getElementById("about").innerHTML = `
                 <span style="display:${
                   user.company == null || !user.company ? "none" : "block"
-                };"><span class="iconify" data-icon="mdi:face"></span> &nbsp; ${
+                };"><span class="iconify" data-icon="mdi:office-building"></span> &nbsp; ${
             user.company
           }</span>
                 <span style="display:block;"><a href="${
@@ -179,6 +187,9 @@ module.exports.updateHTML = (username, opts) => {
                   facebook == null ? "none !important" : "block"
                 };"><a href="https://facebook.com/${facebook}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
                 <span style="display:${
+                  gravatar == null ? "none !important" : "block"
+                };"><a href="https://gravatar.com/${gravatar}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:gravatar"></span></a></span>
+                <span style="display:${
                   instagram == null ? "none !important" : "block"
                 };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
                 <span style="display:${
@@ -205,11 +216,15 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   xda == null ? "none !important" : "block"
                 };"><a href="https://forum.xda-developers.com/member.php?u=${xda}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
+                <span style="display:${
+                  youtube == null ? "none !important" : "block"
+                };"><a href="https://www.youtube.com/channel/${youtube}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="entypo-social:youtube-with-circle"></span></a></span>
+                </div>
                 </div>
                 `;
 
-          //Magic Grid
           document.getElementById("script").innerHTML = `<script>
+            //Magic Grid
             const magicProjectsGrid = new MagicGrid({
               container: "#work_section",
               animate: false,
@@ -234,59 +249,6 @@ module.exports.updateHTML = (username, opts) => {
               magicProjectsGrid.listen();
               magicForksGrid.listen();
             });
-
-            // Typewriter
-            consoleText(["${user.name}", "${user.bio}"], "text", [
-              "white",
-              "white"
-            ]);
-
-            function consoleText(words, id, colors) {
-              if (colors === undefined) colors = ["#fff"];
-              var visible = true;
-              var con = document.getElementById("console");
-              var letterCount = 1;
-              var x = 1;
-              var waiting = false;
-              var target = document.getElementById(id);
-              target.setAttribute("style", "color:" + colors[0]);
-              window.setInterval(function() {
-                if (letterCount === 0 && waiting === false) {
-                  waiting = true;
-                  target.innerHTML = words[0].substring(0, letterCount);
-                  window.setTimeout(function() {
-                    var usedColor = colors.shift();
-                    colors.push(usedColor);
-                    var usedWord = words.shift();
-                    words.push(usedWord);
-                    x = 1;
-                    target.setAttribute("style", "color:" + colors[0]);
-                    letterCount += x;
-                    waiting = false;
-                  }, 1000);
-                } else if (letterCount === words[0].length + 1 && waiting === false) {
-                  waiting = true;
-                  window.setTimeout(function() {
-                    x = -1;
-                    letterCount += x;
-                    waiting = false;
-                  }, 1000);
-                } else if (waiting === false) {
-                  target.innerHTML = words[0].substring(0, letterCount);
-                  letterCount += x;
-                }
-              }, 120);
-              window.setInterval(function() {
-                if (visible === true) {
-                  con.className = "console-underscore hidden";
-                  visible = false;
-                } else {
-                  con.className = "console-underscore";
-
-                  visible = true;
-                }
-              }, 400);
-            }
           </script>`;
 
           //add data to config.json

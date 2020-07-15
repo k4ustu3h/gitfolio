@@ -21,6 +21,7 @@ async function updateCommand() {
     dribbble: data[0].dribbble,
     email: data[0].email,
     facebook: data[0].facebook,
+    gravatar: data[0].gravatar,
     initials: data[0].initials,
     instagram: data[0].instagram,
     keybase: data[0].keybase,
@@ -31,6 +32,7 @@ async function updateCommand() {
     telegram: data[0].telegram,
     twitter: data[0].twitter,
     xda: data[0].xda,
+    youtube: data[0].youtube,
   };
   updateHTML(username, opts);
 }
