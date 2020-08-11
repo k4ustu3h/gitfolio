@@ -37,6 +37,7 @@ program
   .option("-I, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
   .option("-m, --medium [username]", "specify medium username")
+  .option("-p, --pinterest [username]", "specify pinterest username")
   .option("-r, --reddit [username]", "specify reddit username")
   .option("-E, --stackexchange [user id]", "specify stackexchange user id")
   .option("-S, --steam [username]", "specify steam username")

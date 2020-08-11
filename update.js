@@ -26,6 +26,7 @@ async function updateCommand() {
     instagram: data[0].instagram,
     keybase: data[0].keybase,
     medium: data[0].medium,
+    pinterest: data[0].pinterest,
     reddit: data[0].reddit,
     stackexchange: data[0].stackexchange,
     steam: data[0].steam,
