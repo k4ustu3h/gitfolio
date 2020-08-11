@@ -5,7 +5,7 @@
   "main": "build.js",
   "bin": "bin/gitfolio.js",
   "scripts": {
-    "build": "OUT_DIR='./dist' node bin/gitfolio.js build k4ustu3h -f -t dark -s updated -c k4ustu3h -d k4ustu3h -D k4ustu3h -e k4ustu3h@gmail.com -F k4ustu3h -g kaustubhladiya -i K_ -I k4ustu3h -k k4ustu3h -m k4ustu3h -r kaustubhladiya -E 16727002 -S k4ustu3h -T k4ustu3h -w k4ustu3h -x 9461231 -y UCD79rV3UKNzMCkwMLgyteEw",
+    "build": "OUT_DIR='./dist' node bin/gitfolio.js build k4ustu3h -f -t dark -s updated -c k4ustu3h -d k4ustu3h -D k4ustu3h -e k4ustu3h@gmail.com -F k4ustu3h -g kaustubhladiya -i K_ -I k4ustu3h -k k4ustu3h -m k4ustu3h -p k4ustu3h -r kaustubhladiya -E 16727002 -S k4ustu3h -T k4ustu3h -w k4ustu3h -x 9461231 -y UCD79rV3UKNzMCkwMLgyteEw",
     "cli": "OUT_DIR='./dist' node bin/gitfolio.js",
     "clean": "rm -rf ./dist/*",
     "prettier": "prettier --write \"./**/*.{js,jsx,json,html,css,md}\"",
@@ -36,18 +36,18 @@
   "dependencies": {
     "bluebird": "3.7.2",
     "body-parser": "^1.19.0",
-    "commander": "^2.20.0",
+    "commander": "6.0.0",
     "ejs": "3.1.3",
     "express": "4.17.1",
     "github-emoji": "^1.1.1",
-    "got": "11.5.0",
+    "got": "11.5.2",
     "handlebars": "4.7.6",
-    "jsdom": "16.3.0",
+    "jsdom": "16.4.0",
     "ncp": "^2.0.0",
-    "snyk": "1.362.0"
+    "snyk": "1.372.0"
   },
   "devDependencies": {
-    "eslint": "7.4.0",
+    "eslint": "7.6.0",
     "prettier": "2.0.5",
     "stylelint": "13.6.1",
     "stylelint-config-prettier": "8.0.2",

@@ -43,6 +43,7 @@ module.exports.updateHTML = (username, opts) => {
     instagram,
     keybase,
     medium,
+    pinterest,
     reddit,
     stackexchange,
     steam,
@@ -197,7 +198,12 @@ module.exports.updateHTML = (username, opts) => {
                 };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
                 <span style="display:${
                   medium == null ? "none !important" : "block"
-                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:medium-circle-filled" data-width="24" data-height="24"></span></a></span>
+                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:medium-circle-filled" data-width="24" data-height="24"></span></a></span><span style="display:${
+            reddit == null ? "none !important" : "block"
+          };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
+                <span style="display:${
+                  pinterest == null ? "none !important" : "block"
+                };"><a href="https://pinterest.com/${pinterest}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
                 <span style="display:${
                   reddit == null ? "none !important" : "block"
                 };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
