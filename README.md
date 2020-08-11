@@ -132,7 +132,6 @@ gitfolio supports adding the following Social links
 -   Instagram `-I, --instagram <username>`
 -   Keybase `-k, --keybase <username>`
 -   Medium `-m, --medium <username>`
--   Pinterest `-p, --pinterest <username>`
 -   Reddit `-r, --reddit <username>`
 -   Stack Exchange `-E, --stackexchange <user id>`
 -   Steam `-S, --steam <username>`

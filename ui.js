@@ -61,7 +61,6 @@ function uiCommand() {
     const instagram = req.body.instagram ? req.body.instagram : null;
     const keybase = req.body.keybase ? req.body.keybase : null;
     const medium = req.body.medium ? req.body.medium : null;
-    const pinterest = req.body.pinterest ? req.body.pinterest : null;
     const reddit = req.body.reddit ? req.body.reddit : null;
     const stackexchange = req.body.stackexchange
       ? req.body.stackexchange
@@ -90,7 +89,6 @@ function uiCommand() {
       instagram,
       keybase,
       medium,
-      pinterest,
       reddit,
       stackexchange,
       steam,
