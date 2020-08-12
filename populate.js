@@ -44,6 +44,7 @@ module.exports.updateHTML = (username, opts) => {
     keybase,
     medium,
     pinterest,
+    pinterest_key,
     reddit,
     stackexchange,
     steam,
@@ -113,6 +114,7 @@ module.exports.updateHTML = (username, opts) => {
 
           document.getElementsByTagName("head")[0].appendChild(icon);
           document.getElementsByTagName("head")[0].innerHTML += `
+          <meta name="p:domain_verify" content="${pinterest_key}" />
           <meta name="description" content="${user.bio}" />
           <meta property="og:image" content="${user.avatar_url}" />
           <meta property="og:type" content="profile" />

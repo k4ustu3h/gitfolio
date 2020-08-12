@@ -62,6 +62,9 @@ function uiCommand() {
     const keybase = req.body.keybase ? req.body.keybase : null;
     const medium = req.body.medium ? req.body.medium : null;
     const pinterest = req.body.pinterest ? req.body.pinterest : null;
+    const pinterest_key = req.body.pinterest_key
+      ? req.body.pinterest_key
+      : null;
     const reddit = req.body.reddit ? req.body.reddit : null;
     const stackexchange = req.body.stackexchange
       ? req.body.stackexchange
@@ -91,6 +94,7 @@ function uiCommand() {
       keybase,
       medium,
       pinterest,
+      pinterest_key,
       reddit,
       stackexchange,
       steam,

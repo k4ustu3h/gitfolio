@@ -8,7 +8,7 @@
 
 # Gitfolio
 
-### personal website + blog for every github user
+## personal website + blog for every github user
 
 Gitfolio will help you get started with a portfolio website where you could showcase your work + a blog that will help you spread your ideas into real world.
 
@@ -20,7 +20,7 @@ Check out this [live demo](https://k4ustu3h.cf) to see gitfolio in action.
 
 ---
 
-# Getting Started
+## Getting Started
 
 ### Let's Install
 
@@ -133,6 +133,7 @@ gitfolio supports adding the following Social links
 -   Keybase `-k, --keybase <username>`
 -   Medium `-m, --medium <username>`
 -   Pinterest `-p, --pinterest <username>`
+-   Pinterest Domain verification key (meta name="p:domain_verify" content="_specify the key inside this_") `-P, --pinterest_key <key>`
 -   Reddit `-r, --reddit <username>`
 -   Stack Exchange `-E, --stackexchange <user id>`
 -   Steam `-S, --steam <username>`

@@ -90,6 +90,7 @@ async function buildCommand(username, program) {
     keybase: program.keybase,
     medium: program.medium,
     pinterest: program.pinterest,
+    pinterest_key: program.pinterest_key,
     reddit: program.reddit,
     stackexchange: program.stackexchange,
     steam: program.steam,
